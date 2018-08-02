@@ -25,7 +25,7 @@ class WeatherModelImpl: WeatherModel {
     
     func fetchWeather(for coords: (Double, Double), callback: @escaping (String) -> Void) {
         self.cloudDataSource.fetchWeather(for: coords) { (weatherInfo) in
-            callback(weatherInfo)
+            callback(weatherInfo.description)
         }
     }
 }
