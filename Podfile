@@ -7,6 +7,7 @@ target 'SkyWellTest' do
 
   # Pods for SkyWellTest
   pod 'R.swift'
+  pod 'Alamofire', '~> 4.7'
 
 
 end

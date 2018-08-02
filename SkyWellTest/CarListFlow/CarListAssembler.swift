@@ -13,8 +13,11 @@ class CarListAssembler {
     
     func assemble() -> UIViewController {
         
+        let networkManager = (UIApplication.shared.delegate as? AppDelegate)!.networkManager
         
-        let weatherModel = WeatherModelImpl()
+        let cloudDataSource = CloudDataSourceImpl(networkManager: networkManager)
+        
+        let weatherModel = WeatherModelImpl(cloudDataSource: cloudDataSource)
         
         let carListViewModel = CarListViewModelImpl(weatherModel: weatherModel)
         

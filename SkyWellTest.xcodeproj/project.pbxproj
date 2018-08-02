@@ -24,6 +24,8 @@
 		BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790CE21132B7A003E91C0 /* CarInfoVC.swift */; };
 		BF9790D221132BD1003E91C0 /* CarInfoAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790D121132BD1003E91C0 /* CarInfoAssembler.swift */; };
 		BF9790D4211331C7003E91C0 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790D3211331C7003E91C0 /* WeatherModel.swift */; };
+		BF9790D721133575003E91C0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790D621133575003E91C0 /* NetworkManager.swift */; };
+		BF9790DA211335E1003E91C0 /* CloudDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790D9211335E1003E91C0 /* CloudDataSource.swift */; };
 		D890EDAF952681709A202414 /* Pods_SkyWellTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401AEF2E3C11027FDECE81F3 /* Pods_SkyWellTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		BF9790CE21132B7A003E91C0 /* CarInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoVC.swift; sourceTree = "<group>"; };
 		BF9790D121132BD1003E91C0 /* CarInfoAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoAssembler.swift; sourceTree = "<group>"; };
 		BF9790D3211331C7003E91C0 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		BF9790D621133575003E91C0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BF9790D9211335E1003E91C0 /* CloudDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDataSource.swift; sourceTree = "<group>"; };
 		CA4CAE9B74ED71AF6D0BC79C /* Pods-SkyWellTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyWellTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyWellTest/Pods-SkyWellTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,7 @@
 				BF9790BC21130C59003E91C0 /* CarListFlow */,
 				BF9790CB21131B7D003E91C0 /* AddNewCarFlow */,
 				BF9790D021132B99003E91C0 /* CarInfoFlow */,
+				BF9790D8211335A5003E91C0 /* Services */,
 				BF9790AD21130600003E91C0 /* Info.plist */,
 			);
 			path = SkyWellTest;
@@ -170,6 +175,15 @@
 				BF9790D3211331C7003E91C0 /* WeatherModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BF9790D8211335A5003E91C0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790D9211335E1003E91C0 /* CloudDataSource.swift */,
+				BF9790D621133575003E91C0 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,10 +263,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SkyWellTest/Pods-SkyWellTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +316,8 @@
 			files = (
 				BF9790CD21131BF2003E91C0 /* AddNewCarScreenAssembler.swift in Sources */,
 				BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */,
+				BF9790DA211335E1003E91C0 /* CloudDataSource.swift in Sources */,
+				BF9790D721133575003E91C0 /* NetworkManager.swift in Sources */,
 				BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */,
 				BF9790C021130DDF003E91C0 /* R.generated.swift in Sources */,
 				BF9790B4211306F0003E91C0 /* CarListAssembler.swift in Sources */,
@@ -459,10 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 379294YDPQ;
 				INFOPLIST_FILE = SkyWellTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LionLife.SkyWellTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -478,10 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 379294YDPQ;
 				INFOPLIST_FILE = SkyWellTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LionLife.SkyWellTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

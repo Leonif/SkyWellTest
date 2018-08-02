@@ -12,21 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let networkManager: NetworkManager = NetworkManagerFactory.createNetworkManager()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let module = CarListAssembler().assemble()
         self.window?.rootViewController = UINavigationController(rootViewController: module)
         self.window?.makeKeyAndVisible()
         
-        
-        
-        
         return true
     }
+    
+    
+    
 
    
 

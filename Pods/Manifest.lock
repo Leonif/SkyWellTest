@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (4.7.2)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - R.swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - R.swift
     - R.swift.Library
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
 
-PODFILE CHECKSUM: 6c9c7e484c2437d02733174b18480b0a218f8875
+PODFILE CHECKSUM: 044a14d9213360202bdffb34a17217557c24263e
 
 COCOAPODS: 1.5.3
