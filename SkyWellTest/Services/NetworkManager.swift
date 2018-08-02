@@ -10,31 +10,23 @@ import Foundation
 import Alamofire
 
 public protocol NetworkManager {
-    func executeHttpRequest(callback: @escaping (String) -> Void)
+    func executeHttpRequest(requestType: RequestType, callback: @escaping (String) -> Void)
 }
 
+public struct RequestType {
+    var method: HTTPMethod
+    var baseURL: URL
+    var parameters: [String: Any]
+}
 
-private class MoyaNetworkManagerImpl: NetworkManager {
+private class NetworkManagerImpl: NetworkManager {
     
-    
-    
-    
-    
-    
-    
-    func executeHttpRequest(callback: @escaping (String) -> Void) {
-        let baseUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather")!
-        let parameters: [String: Any] = [
-            "lat": 35,
-            "lon": 139,
-            "APPID": "4a92498353c9514b369ac8651d833537"
-        ]
-        
-        Alamofire.request(baseUrl, method: .get,
-                          parameters: parameters,
+    func executeHttpRequest(requestType: RequestType, callback: @escaping (String) -> Void) {
+        Alamofire.request(requestType.baseURL,
+                          method: requestType.method,
+                          parameters: requestType.parameters,
                           encoding: URLEncoding.default, headers: nil)
             .responseJSON { (responce) in
-                
                 print(responce)
                 callback("15C")
         }
@@ -43,6 +35,6 @@ private class MoyaNetworkManagerImpl: NetworkManager {
 
 public class NetworkManagerFactory {
     public static func createNetworkManager() -> NetworkManager {
-        return MoyaNetworkManagerImpl()
+        return NetworkManagerImpl()
     }
 }
