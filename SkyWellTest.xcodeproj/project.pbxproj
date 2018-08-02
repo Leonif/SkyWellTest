@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A1211305FB003E91C0 /* AppDelegate.swift */; };
+		BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A3211305FB003E91C0 /* CarListVC.swift */; };
+		BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A5211305FB003E91C0 /* Main.storyboard */; };
+		BF9790A921130600003E91C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A821130600003E91C0 /* Assets.xcassets */; };
+		BF9790AC21130600003E91C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790AA21130600003E91C0 /* LaunchScreen.storyboard */; };
+		BF9790B4211306F0003E91C0 /* CarListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790B3211306F0003E91C0 /* CarListAssembler.swift */; };
+		BF9790B62113079A003E91C0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790B52113079A003E91C0 /* BaseView.swift */; };
+		BF9790B8211307F4003E91C0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790B7211307F4003E91C0 /* UIView+Extension.swift */; };
+		BF9790C021130DDF003E91C0 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790BF21130DDF003E91C0 /* R.generated.swift */; };
+		BF9790C221130F6A003E91C0 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790C121130F6A003E91C0 /* BaseRouter.swift */; };
+		BF9790C421131027003E91C0 /* CarListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790C321131027003E91C0 /* CarListRouter.swift */; };
+		BF9790C8211312D5003E91C0 /* CarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790C7211312D5003E91C0 /* CarListViewModel.swift */; };
+		BF9790CA21131B76003E91C0 /* AddNewCarScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790C921131B76003E91C0 /* AddNewCarScreenVC.swift */; };
+		BF9790CD21131BF2003E91C0 /* AddNewCarScreenAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790CC21131BF2003E91C0 /* AddNewCarScreenAssembler.swift */; };
+		BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790CE21132B7A003E91C0 /* CarInfoVC.swift */; };
+		BF9790D221132BD1003E91C0 /* CarInfoAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790D121132BD1003E91C0 /* CarInfoAssembler.swift */; };
+		BF9790D4211331C7003E91C0 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790D3211331C7003E91C0 /* WeatherModel.swift */; };
+		D890EDAF952681709A202414 /* Pods_SkyWellTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401AEF2E3C11027FDECE81F3 /* Pods_SkyWellTest.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		401AEF2E3C11027FDECE81F3 /* Pods_SkyWellTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyWellTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67149D6339BF7B977BB5A319 /* Pods-SkyWellTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyWellTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyWellTest/Pods-SkyWellTest.release.xcconfig"; sourceTree = "<group>"; };
+		BF97909E211305FB003E91C0 /* SkyWellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9790A1211305FB003E91C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF9790A3211305FB003E91C0 /* CarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListVC.swift; sourceTree = "<group>"; };
+		BF9790A6211305FB003E91C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF9790A821130600003E91C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF9790AB21130600003E91C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF9790AD21130600003E91C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF9790B3211306F0003E91C0 /* CarListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListAssembler.swift; sourceTree = "<group>"; };
+		BF9790B52113079A003E91C0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		BF9790B7211307F4003E91C0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BF9790BF21130DDF003E91C0 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		BF9790C121130F6A003E91C0 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		BF9790C321131027003E91C0 /* CarListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRouter.swift; sourceTree = "<group>"; };
+		BF9790C7211312D5003E91C0 /* CarListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
+		BF9790C921131B76003E91C0 /* AddNewCarScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCarScreenVC.swift; sourceTree = "<group>"; };
+		BF9790CC21131BF2003E91C0 /* AddNewCarScreenAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCarScreenAssembler.swift; sourceTree = "<group>"; };
+		BF9790CE21132B7A003E91C0 /* CarInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoVC.swift; sourceTree = "<group>"; };
+		BF9790D121132BD1003E91C0 /* CarInfoAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoAssembler.swift; sourceTree = "<group>"; };
+		BF9790D3211331C7003E91C0 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		CA4CAE9B74ED71AF6D0BC79C /* Pods-SkyWellTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyWellTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyWellTest/Pods-SkyWellTest.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF97909B211305FB003E91C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D890EDAF952681709A202414 /* Pods_SkyWellTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		088B4A6678C7FA81868EB448 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				401AEF2E3C11027FDECE81F3 /* Pods_SkyWellTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A3BC456BC11EA898EB7AE0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA4CAE9B74ED71AF6D0BC79C /* Pods-SkyWellTest.debug.xcconfig */,
+				67149D6339BF7B977BB5A319 /* Pods-SkyWellTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF979095211305FA003E91C0 = {
+			isa = PBXGroup;
+			children = (
+				BF9790A0211305FB003E91C0 /* SkyWellTest */,
+				BF97909F211305FB003E91C0 /* Products */,
+				6A3BC456BC11EA898EB7AE0D /* Pods */,
+				088B4A6678C7FA81868EB448 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF97909F211305FB003E91C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF97909E211305FB003E91C0 /* SkyWellTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF9790A0211305FB003E91C0 /* SkyWellTest */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790A5211305FB003E91C0 /* Main.storyboard */,
+				BF9790BD21130C71003E91C0 /* Supported */,
+				BF9790BE21130C93003E91C0 /* Common */,
+				BF9790D52113320B003E91C0 /* Models */,
+				BF9790BC21130C59003E91C0 /* CarListFlow */,
+				BF9790CB21131B7D003E91C0 /* AddNewCarFlow */,
+				BF9790D021132B99003E91C0 /* CarInfoFlow */,
+				BF9790AD21130600003E91C0 /* Info.plist */,
+			);
+			path = SkyWellTest;
+			sourceTree = "<group>";
+		};
+		BF9790BC21130C59003E91C0 /* CarListFlow */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790B3211306F0003E91C0 /* CarListAssembler.swift */,
+				BF9790A3211305FB003E91C0 /* CarListVC.swift */,
+				BF9790C7211312D5003E91C0 /* CarListViewModel.swift */,
+				BF9790C321131027003E91C0 /* CarListRouter.swift */,
+			);
+			path = CarListFlow;
+			sourceTree = "<group>";
+		};
+		BF9790BD21130C71003E91C0 /* Supported */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790AA21130600003E91C0 /* LaunchScreen.storyboard */,
+				BF9790A821130600003E91C0 /* Assets.xcassets */,
+				BF9790A1211305FB003E91C0 /* AppDelegate.swift */,
+				BF9790BF21130DDF003E91C0 /* R.generated.swift */,
+				BF9790B7211307F4003E91C0 /* UIView+Extension.swift */,
+			);
+			path = Supported;
+			sourceTree = "<group>";
+		};
+		BF9790BE21130C93003E91C0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790C121130F6A003E91C0 /* BaseRouter.swift */,
+				BF9790B52113079A003E91C0 /* BaseView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BF9790CB21131B7D003E91C0 /* AddNewCarFlow */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790CC21131BF2003E91C0 /* AddNewCarScreenAssembler.swift */,
+				BF9790C921131B76003E91C0 /* AddNewCarScreenVC.swift */,
+			);
+			path = AddNewCarFlow;
+			sourceTree = "<group>";
+		};
+		BF9790D021132B99003E91C0 /* CarInfoFlow */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790D121132BD1003E91C0 /* CarInfoAssembler.swift */,
+				BF9790CE21132B7A003E91C0 /* CarInfoVC.swift */,
+			);
+			path = CarInfoFlow;
+			sourceTree = "<group>";
+		};
+		BF9790D52113320B003E91C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790D3211331C7003E91C0 /* WeatherModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF97909D211305FB003E91C0 /* SkyWellTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF9790B021130600003E91C0 /* Build configuration list for PBXNativeTarget "SkyWellTest" */;
+			buildPhases = (
+				C9E7194B03EF4E514C465C65 /* [CP] Check Pods Manifest.lock */,
+				BF9790BB21130BD3003E91C0 /* ShellScript */,
+				BF97909A211305FB003E91C0 /* Sources */,
+				BF97909B211305FB003E91C0 /* Frameworks */,
+				BF97909C211305FB003E91C0 /* Resources */,
+				1DC79D39E09CEE982E92D67E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyWellTest;
+			productName = SkyWellTest;
+			productReference = BF97909E211305FB003E91C0 /* SkyWellTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF979096211305FA003E91C0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "LEONID NIFANTIJEV";
+				TargetAttributes = {
+					BF97909D211305FB003E91C0 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = BF979099211305FA003E91C0 /* Build configuration list for PBXProject "SkyWellTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF979095211305FA003E91C0;
+			productRefGroup = BF97909F211305FB003E91C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF97909D211305FB003E91C0 /* SkyWellTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF97909C211305FB003E91C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF9790AC21130600003E91C0 /* LaunchScreen.storyboard in Resources */,
+				BF9790A921130600003E91C0 /* Assets.xcassets in Resources */,
+				BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DC79D39E09CEE982E92D67E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkyWellTest/Pods-SkyWellTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyWellTest/Pods-SkyWellTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF9790BB21130BD3003E91C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+		};
+		C9E7194B03EF4E514C465C65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkyWellTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF97909A211305FB003E91C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF9790CD21131BF2003E91C0 /* AddNewCarScreenAssembler.swift in Sources */,
+				BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */,
+				BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */,
+				BF9790C021130DDF003E91C0 /* R.generated.swift in Sources */,
+				BF9790B4211306F0003E91C0 /* CarListAssembler.swift in Sources */,
+				BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */,
+				BF9790B8211307F4003E91C0 /* UIView+Extension.swift in Sources */,
+				BF9790C8211312D5003E91C0 /* CarListViewModel.swift in Sources */,
+				BF9790CA21131B76003E91C0 /* AddNewCarScreenVC.swift in Sources */,
+				BF9790C421131027003E91C0 /* CarListRouter.swift in Sources */,
+				BF9790D4211331C7003E91C0 /* WeatherModel.swift in Sources */,
+				BF9790D221132BD1003E91C0 /* CarInfoAssembler.swift in Sources */,
+				BF9790B62113079A003E91C0 /* BaseView.swift in Sources */,
+				BF9790C221130F6A003E91C0 /* BaseRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BF9790A5211305FB003E91C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF9790A6211305FB003E91C0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF9790AA21130600003E91C0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF9790AB21130600003E91C0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF9790AE21130600003E91C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF9790AF21130600003E91C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF9790B121130600003E91C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA4CAE9B74ED71AF6D0BC79C /* Pods-SkyWellTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 379294YDPQ;
+				INFOPLIST_FILE = SkyWellTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LionLife.SkyWellTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF9790B221130600003E91C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67149D6339BF7B977BB5A319 /* Pods-SkyWellTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 379294YDPQ;
+				INFOPLIST_FILE = SkyWellTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LionLife.SkyWellTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF979099211305FA003E91C0 /* Build configuration list for PBXProject "SkyWellTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF9790AE21130600003E91C0 /* Debug */,
+				BF9790AF21130600003E91C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF9790B021130600003E91C0 /* Build configuration list for PBXNativeTarget "SkyWellTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF9790B121130600003E91C0 /* Debug */,
+				BF9790B221130600003E91C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF979096211305FA003E91C0 /* Project object */;
+}

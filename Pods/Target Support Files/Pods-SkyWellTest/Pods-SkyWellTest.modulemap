@@ -1,0 +1,6 @@
+framework module Pods_SkyWellTest {
+  umbrella header "Pods-SkyWellTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
