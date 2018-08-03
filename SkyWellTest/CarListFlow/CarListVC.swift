@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CarListVC: UIViewController, BaseView {
     var carListViewModel: CarListViewModel!
 
@@ -26,10 +27,10 @@ class CarListVC: UIViewController, BaseView {
 //        self.carListViewModel.showCarDetail(for: "12")
 //
         self.carListViewModel.fetchCarList()
-//        self.carListViewModel.fetchWeatherInfo()
+        self.carListViewModel.fetchWeatherInfo()
         
         
-//        self.carListViewModel.save(car: CarEntity(title: "Ferrari"))
+        self.carListViewModel.save(car: CarInfo(title: "Ferrari"))
         
     }
 

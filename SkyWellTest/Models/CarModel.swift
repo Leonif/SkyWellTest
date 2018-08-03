@@ -8,10 +8,23 @@
 
 import Foundation
 
+struct CarInfo {
+    let id: String
+    var title: String
+    
+    init(id: String = UUID().uuidString, title: String) {
+        self.id = id
+        self.title = title
+    }
+}
+
+
+
 protocol CarModel {
     func fetchAllCars(callback: ([CarEntity]) -> Void)
     func fetchCar(with id: String, callback: (CarEntity)-> Void)
-    func saveCar(car: CarEntity)
+    func saveCar(car: CarInfo)
+    func removeCar(with id: String)
 }
 
 
@@ -22,7 +35,6 @@ class CarModelImpl: CarModel {
     init(localDataSource: LocalDataSource) {
         self.localDataSource = localDataSource
     }
-    
     
     func fetchAllCars(callback: ([CarEntity]) -> Void) {
         self.localDataSource.fetchAllCars { (carList) in
@@ -36,8 +48,12 @@ class CarModelImpl: CarModel {
         }
     }
     
-    func saveCar(car: CarEntity) {
+    func saveCar(car: CarInfo) {
         self.localDataSource.saveCar(car: car)
+    }
+    
+    func removeCar(with id: String) {
+        self.localDataSource.removeCar(with: id)
     }
     
 }

@@ -13,6 +13,7 @@ protocol CloudDataSource {
 }
 
 struct WeatherEntity {
+    var city: String
     var temprature: Double
     var description: String
 }
@@ -29,8 +30,8 @@ class CloudDataSourceImpl: CloudDataSource {
         
                 let baseUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather")!
                 let parameters: [String: Any] = [
-                    "lat": 35,
-                    "lon": 139,
+                    "lat": coords.0,
+                    "lon": coords.1,
                     "APPID": "4a92498353c9514b369ac8651d833537"
                 ]
         
@@ -41,13 +42,15 @@ class CloudDataSourceImpl: CloudDataSource {
         self.networkManager.executeHttpRequest(requestType: requestType) { (weatherJSONInfo) in
             guard let weatherDict = weatherJSONInfo as? [String: Any] else { return }
             
+            
+            guard let city = weatherDict["name"] as? String else { return }
             guard let main = weatherDict["main"] as? [String: Any] else { return }
             guard let temp = main["temp"] as? Double else { return }
             guard let weather = weatherDict["weather"] as? [[String: Any]] else { return }
             guard let firstElement = weather.first,
                 let description = firstElement["description"] as? String else { return }
             
-            let entity = WeatherEntity(temprature: temp, description: description)
+            let entity = WeatherEntity(city: city, temprature: temp, description: description)
             
             callback(entity)
         }

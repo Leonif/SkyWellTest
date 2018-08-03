@@ -191,9 +191,9 @@
 			children = (
 				BF9790D9211335E1003E91C0 /* CloudDataSource.swift */,
 				799D9DE3211415C000490627 /* LocalDataSource.swift */,
-				799E298821141FBF00C835A8 /* CoreData.xcdatamodeld */,
 				BF9790D621133575003E91C0 /* NetworkManager.swift */,
 				799D9DE12114158B00490627 /* PersistanceManager.swift */,
+				799E298821141FBF00C835A8 /* CoreData.xcdatamodeld */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -495,7 +495,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 379294YDPQ;
 				INFOPLIST_FILE = SkyWellTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = LionLife.SkyWellTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -511,7 +514,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 379294YDPQ;
 				INFOPLIST_FILE = SkyWellTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = LionLife.SkyWellTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
