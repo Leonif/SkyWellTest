@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		799D9DE22114158B00490627 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D9DE12114158B00490627 /* PersistanceManager.swift */; };
+		799D9DE4211415C000490627 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D9DE3211415C000490627 /* LocalDataSource.swift */; };
+		799D9DE62114175700490627 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D9DE52114175700490627 /* CarModel.swift */; };
+		799E298A21141FBF00C835A8 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 799E298821141FBF00C835A8 /* CoreData.xcdatamodeld */; };
 		BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A1211305FB003E91C0 /* AppDelegate.swift */; };
 		BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A3211305FB003E91C0 /* CarListVC.swift */; };
 		BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A5211305FB003E91C0 /* Main.storyboard */; };
@@ -32,6 +36,10 @@
 /* Begin PBXFileReference section */
 		401AEF2E3C11027FDECE81F3 /* Pods_SkyWellTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyWellTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67149D6339BF7B977BB5A319 /* Pods-SkyWellTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyWellTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyWellTest/Pods-SkyWellTest.release.xcconfig"; sourceTree = "<group>"; };
+		799D9DE12114158B00490627 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		799D9DE3211415C000490627 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		799D9DE52114175700490627 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		799E298921141FBF00C835A8 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		BF97909E211305FB003E91C0 /* SkyWellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9790A1211305FB003E91C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF9790A3211305FB003E91C0 /* CarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListVC.swift; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9790D3211331C7003E91C0 /* WeatherModel.swift */,
+				799D9DE52114175700490627 /* CarModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,7 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				BF9790D9211335E1003E91C0 /* CloudDataSource.swift */,
+				799D9DE3211415C000490627 /* LocalDataSource.swift */,
+				799E298821141FBF00C835A8 /* CoreData.xcdatamodeld */,
 				BF9790D621133575003E91C0 /* NetworkManager.swift */,
+				799D9DE12114158B00490627 /* PersistanceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -264,11 +276,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SkyWellTest/Pods-SkyWellTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,12 +331,16 @@
 				BF9790CD21131BF2003E91C0 /* AddNewCarScreenAssembler.swift in Sources */,
 				BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */,
 				BF9790DA211335E1003E91C0 /* CloudDataSource.swift in Sources */,
+				799D9DE22114158B00490627 /* PersistanceManager.swift in Sources */,
 				BF9790D721133575003E91C0 /* NetworkManager.swift in Sources */,
 				BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */,
+				799D9DE4211415C000490627 /* LocalDataSource.swift in Sources */,
 				BF9790C021130DDF003E91C0 /* R.generated.swift in Sources */,
+				799D9DE62114175700490627 /* CarModel.swift in Sources */,
 				BF9790B4211306F0003E91C0 /* CarListAssembler.swift in Sources */,
 				BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */,
 				BF9790B8211307F4003E91C0 /* UIView+Extension.swift in Sources */,
+				799E298A21141FBF00C835A8 /* CoreData.xcdatamodeld in Sources */,
 				BF9790C8211312D5003E91C0 /* CarListViewModel.swift in Sources */,
 				BF9790CA21131B76003E91C0 /* AddNewCarScreenVC.swift in Sources */,
 				BF9790C421131027003E91C0 /* CarListRouter.swift in Sources */,
@@ -523,6 +541,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		799E298821141FBF00C835A8 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				799E298921141FBF00C835A8 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 799E298921141FBF00C835A8 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BF979096211305FA003E91C0 /* Project object */;
 }

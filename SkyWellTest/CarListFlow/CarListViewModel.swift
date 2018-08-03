@@ -9,12 +9,14 @@
 import Foundation
 
 protocol CarListViewModel {
-    var onFetchedCarList: (([String]) -> Void)? { get set }
+    var onFetchedCarList: (([CarEntity]) -> Void)? { get set }
     var onFetchedWeatherInfo: ((String) -> Void)? { get set }
+    
     
     
     func fetchCarList()
     func fetchWeatherInfo()
+    func save(car: CarEntity)
     
     func addNewCar()
     func showCarDetail(for id: String)
@@ -23,15 +25,17 @@ protocol CarListViewModel {
 class CarListViewModelImpl: CarListViewModel {
     
     private var weatherModel: WeatherModel!
-    var onFetchedCarList: (([String]) -> Void)?
+    private var carModel: CarModel!
+    var onFetchedCarList: (([CarEntity]) -> Void)?
     var onFetchedWeatherInfo: ((String) -> Void)?
     
     var router: CarListRouter!
     
     
-    init(weatherModel: WeatherModel) {
+    init(weatherModel: WeatherModel, carModel: CarModel) {
         
         self.weatherModel = weatherModel
+        self.carModel = carModel
         
     }
     
@@ -42,8 +46,9 @@ class CarListViewModelImpl: CarListViewModel {
     }
     
     func fetchCarList() {
-        let carList: [String] = ["Ferrari", "Mazzeratti"]
-        self.onFetchedCarList?(carList)
+        self.carModel.fetchAllCars { (carList) in
+            self.onFetchedCarList?(carList)
+        }
     }
     
     func addNewCar() {
@@ -53,6 +58,11 @@ class CarListViewModelImpl: CarListViewModel {
     
     func showCarDetail(for id: String) {
         self.router.showCarDetailScreen(for: id)
+    }
+    
+    
+    func save(car: CarEntity) {
+        carModel.saveCar(car: car)
     }
     
 }

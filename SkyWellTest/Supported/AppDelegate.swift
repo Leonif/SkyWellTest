@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let networkManager: NetworkManager = NetworkManagerFactory.createNetworkManager()
+    let persistanceManager: PersistanceManager = PersistanceManagerFactory.createPersistanceManager()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let module = CarListAssembler().assemble()
         self.window?.rootViewController = UINavigationController(rootViewController: module)
         self.window?.makeKeyAndVisible()
+        
         
         return true
     }

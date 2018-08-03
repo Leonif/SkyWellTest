@@ -23,10 +23,13 @@ class CarListVC: UIViewController, BaseView {
         }
         
 //        self.carListViewModel.addNewCar()
-        self.carListViewModel.showCarDetail(for: "12")
-        
+//        self.carListViewModel.showCarDetail(for: "12")
+//
         self.carListViewModel.fetchCarList()
-        self.carListViewModel.fetchWeatherInfo()
+//        self.carListViewModel.fetchWeatherInfo()
+        
+        
+//        self.carListViewModel.save(car: CarEntity(title: "Ferrari"))
         
     }
 
