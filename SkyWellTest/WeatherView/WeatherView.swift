@@ -16,10 +16,13 @@ class WeatherView: UIView {
     @IBOutlet weak var city: UILabel!
     
     class func view() -> WeatherView {
-        return Bundle.main.loadNibNamed("WeatherView", owner: nil)?.first as! WeatherView
+        let v = Bundle.main.loadNibNamed("WeatherView", owner: nil)?.first as! WeatherView
+//        v.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        
+        return v
     }
 
-    func bind(weatherInfo: WeatherEntity) {
+    func bind(_ weatherInfo: WeatherEntity) {
         self.city.text = weatherInfo.city
         self.condtitions.text = weatherInfo.description
         let plus = weatherInfo.cesium > 0.0 ? "+" : ""

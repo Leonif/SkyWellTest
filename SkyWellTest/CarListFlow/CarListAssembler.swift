@@ -23,9 +23,11 @@ class CarListAssembler {
         let carModel = CarModelImpl(localDataSource: localDataSource)
         
         let carListViewModel = CarListViewModelImpl(weatherModel: weatherModel, carModel: carModel)
+        let adapter = CarListAdapter()
         
         let view =  R.storyboard.main.carListVC()!
         view.carListViewModel = carListViewModel
+        view.adapter = adapter
         
         let router = CarListRouterImpl(view: view)
         carListViewModel.router = router

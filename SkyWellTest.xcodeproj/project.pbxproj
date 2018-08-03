@@ -13,6 +13,7 @@
 		799E298A21141FBF00C835A8 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 799E298821141FBF00C835A8 /* CoreData.xcdatamodeld */; };
 		799E298C2114874200C835A8 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799E298B2114874200C835A8 /* WeatherView.xib */; };
 		799E298E2114989E00C835A8 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E298D2114989E00C835A8 /* WeatherView.swift */; };
+		799E29912114A69700C835A8 /* CarListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E29902114A69700C835A8 /* CarListAdapter.swift */; };
 		BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A1211305FB003E91C0 /* AppDelegate.swift */; };
 		BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A3211305FB003E91C0 /* CarListVC.swift */; };
 		BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A5211305FB003E91C0 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		799E298921141FBF00C835A8 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		799E298B2114874200C835A8 /* WeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		799E298D2114989E00C835A8 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		799E29902114A69700C835A8 /* CarListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListAdapter.swift; sourceTree = "<group>"; };
 		BF97909E211305FB003E91C0 /* SkyWellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9790A1211305FB003E91C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF9790A3211305FB003E91C0 /* CarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListVC.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				BF9790B3211306F0003E91C0 /* CarListAssembler.swift */,
 				BF9790A3211305FB003E91C0 /* CarListVC.swift */,
+				799E29902114A69700C835A8 /* CarListAdapter.swift */,
 				BF9790C7211312D5003E91C0 /* CarListViewModel.swift */,
 				BF9790C321131027003E91C0 /* CarListRouter.swift */,
 			);
@@ -343,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				799E29912114A69700C835A8 /* CarListAdapter.swift in Sources */,
 				BF9790CD21131BF2003E91C0 /* AddNewCarScreenAssembler.swift in Sources */,
 				BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */,
 				BF9790DA211335E1003E91C0 /* CloudDataSource.swift in Sources */,
