@@ -51,12 +51,15 @@ class CarListVC: UIViewController, BaseView {
         
         let navTitle = NSMutableAttributedString(string: "Car List", attributes:
             [NSAttributedStringKey.foregroundColor: UIColor.white,
-            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 32)])
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 32)])
         
         navLabel.attributedText = navTitle
         self.navigationItem.titleView = navLabel
             
-        navigationController?.navigationBar.barTintColor = UIColor.green
+        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x9AC649)
+        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0x9AC649)
+        navigationController?.navigationBar.isTranslucent = false
+        
         
         self.createCarButton.addTarget(self, action: #selector(self.createCar), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.createCarButton)
