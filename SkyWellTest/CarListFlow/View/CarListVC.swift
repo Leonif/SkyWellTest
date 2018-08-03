@@ -23,8 +23,12 @@ class CarListVC: UIViewController, BaseView {
         
         return b
     }()
-
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.dataLoad()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,32 +37,29 @@ class CarListVC: UIViewController, BaseView {
         self.setupAdapter()
         self.subscribeOnViewModel()
         self.setupNavigationBar()
-        self.dataLoad()
-        
     }
     
-    
     func dataLoad() {
-        //        self.carListViewModel.addNewCar()
-        //        self.carListViewModel.showCarDetail(for: "12")
-        //
         self.carListViewModel.fetchCarList()
         self.carListViewModel.fetchWeatherInfo()
-//
-//        
-//        self.carListViewModel.save(car: CarInfo(title: "Ferrari"))
     }
     
     
     func setupNavigationBar() {
         
-        self.createCarButton.addTarget(self, action: #selector(self.createCar), for: .touchUpInside)
+        let navLabel = UILabel()
         
+        let navTitle = NSMutableAttributedString(string: "Car List", attributes:
+            [NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 32)])
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.createCarButton)
-        
+        navLabel.attributedText = navTitle
+        self.navigationItem.titleView = navLabel
+            
         navigationController?.navigationBar.barTintColor = UIColor.green
         
+        self.createCarButton.addTarget(self, action: #selector(self.createCar), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.createCarButton)
     }
     @objc
     func createCar() {

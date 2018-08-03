@@ -11,7 +11,7 @@ import Foundation
 protocol LocalDataSource {
     func fetchAllCars(callback: ([CarEntity]) -> Void)
     func fetchCar(with id: String, callback: (CarEntity)-> Void)
-    func saveCar(car: CarInfo)
+    func saveCar(car: CarInfo, completion: @escaping (Bool) -> Void)
     func removeCar(with id: String)
 }
 
@@ -41,10 +41,13 @@ class LocalDataSourceImpl: LocalDataSource {
         callback(CarEntity(id: car.id ?? "no id", title: car.title ?? "No name"))
     }
     
-    func saveCar(car: CarInfo) {
-        self.persistanceManager.saveRecord { (carObject: Car) in
+    func saveCar(car: CarInfo, completion: @escaping (Bool) -> Void) {
+        
+        self.persistanceManager.saveRecord(saveCode: { (carObject: Car) in
             carObject.id = car.id
             carObject.title = car.title
+        }) { (success) in
+            completion(success)
         }
     }
     

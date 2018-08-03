@@ -12,18 +12,13 @@ protocol CarListViewModel {
     var onFetchedCarList: (([CarInfo]) -> Void)? { get set }
     var onFetchedWeatherInfo: ((WeatherEntity) -> Void)? { get set }
     
-    
-    
     func fetchCarList()
-    func save(car: CarInfo)
+    func save(car: CarInfo, completion: @escaping (Bool) -> Void)
     func removeCar(with id: String)
     func showCarDetail(for id: String)
     
     func fetchWeatherInfo()
-    
-    
     func addNewCar()
-    
 }
 
 class CarListViewModelImpl: CarListViewModel {
@@ -71,8 +66,10 @@ class CarListViewModelImpl: CarListViewModel {
     }
     
     
-    func save(car: CarInfo) {
-        carModel.saveCar(car: car)
+    func save(car: CarInfo, completion: @escaping (Bool) -> Void) {
+        carModel.saveCar(car: car, completion: { success in
+            completion(success)
+        })
     }
     
 }

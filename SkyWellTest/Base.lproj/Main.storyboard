@@ -58,17 +58,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add new car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muq-KF-8UU">
-                                <rect key="frame" x="149" y="323" width="96" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Car Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTN-tT-PS4">
+                                <rect key="frame" x="137.5" y="318.5" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="FlD-Ue-HxV"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fTN-tT-PS4" firstAttribute="centerX" secondItem="0Ek-qX-I1s" secondAttribute="centerX" id="Ndy-30-cVX"/>
+                            <constraint firstItem="fTN-tT-PS4" firstAttribute="centerY" secondItem="0Ek-qX-I1s" secondAttribute="centerY" id="Qpm-7v-ngm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gha-KT-HFP"/>
                     </view>
+                    <connections>
+                        <outlet property="carTitleTextField" destination="fTN-tT-PS4" id="Xh3-vT-4JR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkO-GM-CSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

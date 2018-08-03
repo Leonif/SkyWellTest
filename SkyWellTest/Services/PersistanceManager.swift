@@ -14,7 +14,7 @@ typealias Persistanble = NSManagedObject
 protocol PersistanceManager {
     func fetchAllRecords<Entity: Persistanble>() -> [Entity]
     func fetchRecord<Entity: Persistanble>(with id: String) -> Entity
-    func saveRecord<Entity: Persistanble>(saveCode: @escaping (Entity) -> Void)
+    func saveRecord<Entity: Persistanble>(saveCode: @escaping (Entity) -> Void, completion: @escaping (Bool) -> Void)
     func removeRecord<Entity: Persistanble>(for entity: Entity)
 }
 
@@ -40,11 +40,13 @@ class PersistanceManagerImpl: PersistanceManager {
         }
     }
     
-    func saveRecord<Entity>(saveCode: @escaping (Entity) -> Void) where Entity : Persistanble {
+    func saveRecord<Entity>(saveCode: @escaping (Entity) -> Void, completion: @escaping (Bool) -> Void) where Entity : Persistanble {
         MagicalRecord.save({ (localContext) in
             let localEntity: Entity = Entity.mr_createEntity(in: localContext)!
             saveCode(localEntity)
-        })
+        }) { (success, error) in
+            completion(success)
+        }
     }
     
     func removeRecord<Entity>(for entity: Entity) where Entity : Persistanble {
