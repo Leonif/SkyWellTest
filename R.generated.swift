@@ -31,13 +31,50 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
+    /// Image `005-sunny`.
+    static let sunny = Rswift.ImageResource(bundle: R.hostingBundle, name: "005-sunny")
+    /// Image `006-sun`.
+    static let sun = Rswift.ImageResource(bundle: R.hostingBundle, name: "006-sun")
+    /// Image `007-clouds`.
+    static let clouds = Rswift.ImageResource(bundle: R.hostingBundle, name: "007-clouds")
+    /// Image `weather_back`.
+    static let weather_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "weather_back")
+    
+    /// `UIImage(named: "005-sunny", bundle: ..., traitCollection: ...)`
+    static func sunny(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sunny, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "006-sun", bundle: ..., traitCollection: ...)`
+    static func sun(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sun, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "007-clouds", bundle: ..., traitCollection: ...)`
+    static func clouds(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.clouds, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "weather_back", bundle: ..., traitCollection: ...)`
+    static func weather_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.weather_back, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
+    /// Nib `WeatherView`.
+    static let weatherView = _R.nib._WeatherView()
+    
+    /// `UINib(name: "WeatherView", in: bundle)`
+    static func weatherView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.weatherView)
+    }
+    
     fileprivate init() {}
   }
   
@@ -92,9 +129,30 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
+    try nib.validate()
   }
   
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _WeatherView.validate()
+    }
+    
+    struct _WeatherView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "WeatherView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> WeatherView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? WeatherView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "005-sunny", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named '005-sunny' is used in nib 'WeatherView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "weather_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'weather_back' is used in nib 'WeatherView', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   

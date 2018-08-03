@@ -16,6 +16,14 @@ struct WeatherEntity {
     var city: String
     var temprature: Double
     var description: String
+    
+    var kelvin: Double {
+        return temprature
+    }
+    
+    var cesium: Double {
+        return kelvin - 273.15
+    }
 }
 
 

@@ -11,6 +11,8 @@
 		799D9DE4211415C000490627 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D9DE3211415C000490627 /* LocalDataSource.swift */; };
 		799D9DE62114175700490627 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D9DE52114175700490627 /* CarModel.swift */; };
 		799E298A21141FBF00C835A8 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 799E298821141FBF00C835A8 /* CoreData.xcdatamodeld */; };
+		799E298C2114874200C835A8 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799E298B2114874200C835A8 /* WeatherView.xib */; };
+		799E298E2114989E00C835A8 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E298D2114989E00C835A8 /* WeatherView.swift */; };
 		BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A1211305FB003E91C0 /* AppDelegate.swift */; };
 		BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A3211305FB003E91C0 /* CarListVC.swift */; };
 		BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A5211305FB003E91C0 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		799D9DE3211415C000490627 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		799D9DE52114175700490627 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		799E298921141FBF00C835A8 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		799E298B2114874200C835A8 /* WeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		799E298D2114989E00C835A8 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		BF97909E211305FB003E91C0 /* SkyWellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9790A1211305FB003E91C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF9790A3211305FB003E91C0 /* CarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListVC.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		799E298F211498A400C835A8 /* WeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				799E298B2114874200C835A8 /* WeatherView.xib */,
+				799E298D2114989E00C835A8 /* WeatherView.swift */,
+			);
+			path = WeatherView;
+			sourceTree = "<group>";
+		};
 		BF979095211305FA003E91C0 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +127,7 @@
 		BF9790A0211305FB003E91C0 /* SkyWellTest */ = {
 			isa = PBXGroup;
 			children = (
+				799E298F211498A400C835A8 /* WeatherView */,
 				BF9790A5211305FB003E91C0 /* Main.storyboard */,
 				BF9790BD21130C71003E91C0 /* Supported */,
 				BF9790BE21130C93003E91C0 /* Common */,
@@ -262,6 +276,7 @@
 				BF9790AC21130600003E91C0 /* LaunchScreen.storyboard in Resources */,
 				BF9790A921130600003E91C0 /* Assets.xcassets in Resources */,
 				BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */,
+				799E298C2114874200C835A8 /* WeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +355,7 @@
 				BF9790B4211306F0003E91C0 /* CarListAssembler.swift in Sources */,
 				BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */,
 				BF9790B8211307F4003E91C0 /* UIView+Extension.swift in Sources */,
+				799E298E2114989E00C835A8 /* WeatherView.swift in Sources */,
 				799E298A21141FBF00C835A8 /* CoreData.xcdatamodeld in Sources */,
 				BF9790C8211312D5003E91C0 /* CarListViewModel.swift in Sources */,
 				BF9790CA21131B76003E91C0 /* AddNewCarScreenVC.swift in Sources */,
