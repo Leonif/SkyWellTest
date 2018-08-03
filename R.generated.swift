@@ -31,7 +31,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
     /// Image `005-sunny`.
     static let sunny = Rswift.ImageResource(bundle: R.hostingBundle, name: "005-sunny")
@@ -39,6 +39,8 @@ struct R: Rswift.Validatable {
     static let sun = Rswift.ImageResource(bundle: R.hostingBundle, name: "006-sun")
     /// Image `007-clouds`.
     static let clouds = Rswift.ImageResource(bundle: R.hostingBundle, name: "007-clouds")
+    /// Image `car_placeholder`.
+    static let car_placeholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "car_placeholder")
     /// Image `weather_back`.
     static let weather_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "weather_back")
     
@@ -57,6 +59,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.clouds, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "car_placeholder", bundle: ..., traitCollection: ...)`
+    static func car_placeholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.car_placeholder, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "weather_back", bundle: ..., traitCollection: ...)`
     static func weather_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.weather_back, compatibleWith: traitCollection)
@@ -65,10 +72,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `CarCell`.
+    static let carCell = _R.nib._CarCell()
     /// Nib `WeatherView`.
     static let weatherView = _R.nib._WeatherView()
+    
+    /// `UINib(name: "CarCell", in: bundle)`
+    static func carCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.carCell)
+    }
     
     /// `UINib(name: "WeatherView", in: bundle)`
     static func weatherView(_: Void = ()) -> UIKit.UINib {
@@ -138,6 +152,22 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _WeatherView.validate()
+      try _CarCell.validate()
+    }
+    
+    struct _CarCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CarCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> CarCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CarCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "car_placeholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'car_placeholder' is used in nib 'CarCell', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct _WeatherView: Rswift.NibResourceType, Rswift.Validatable {

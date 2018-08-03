@@ -14,6 +14,9 @@
 		799E298C2114874200C835A8 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799E298B2114874200C835A8 /* WeatherView.xib */; };
 		799E298E2114989E00C835A8 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E298D2114989E00C835A8 /* WeatherView.swift */; };
 		799E29912114A69700C835A8 /* CarListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E29902114A69700C835A8 /* CarListAdapter.swift */; };
+		79AF31F62114BDF400CD128D /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF31F42114BDF400CD128D /* CarCell.swift */; };
+		79AF31F72114BDF400CD128D /* CarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AF31F52114BDF400CD128D /* CarCell.xib */; };
+		79AF31FA2114BF5200CD128D /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF31F92114BF5200CD128D /* TableView+Extension.swift */; };
 		BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A1211305FB003E91C0 /* AppDelegate.swift */; };
 		BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A3211305FB003E91C0 /* CarListVC.swift */; };
 		BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A5211305FB003E91C0 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 		799E298B2114874200C835A8 /* WeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		799E298D2114989E00C835A8 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		799E29902114A69700C835A8 /* CarListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListAdapter.swift; sourceTree = "<group>"; };
+		79AF31F42114BDF400CD128D /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		79AF31F52114BDF400CD128D /* CarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarCell.xib; sourceTree = "<group>"; };
+		79AF31F92114BF5200CD128D /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		BF97909E211305FB003E91C0 /* SkyWellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9790A1211305FB003E91C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF9790A3211305FB003E91C0 /* CarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListVC.swift; sourceTree = "<group>"; };
@@ -108,6 +114,25 @@
 			path = WeatherView;
 			sourceTree = "<group>";
 		};
+		79AF31F32114BDC800CD128D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF9790A3211305FB003E91C0 /* CarListVC.swift */,
+				79AF31F82114BDF900CD128D /* CarCell */,
+				799E29902114A69700C835A8 /* CarListAdapter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79AF31F82114BDF900CD128D /* CarCell */ = {
+			isa = PBXGroup;
+			children = (
+				79AF31F42114BDF400CD128D /* CarCell.swift */,
+				79AF31F52114BDF400CD128D /* CarCell.xib */,
+			);
+			path = CarCell;
+			sourceTree = "<group>";
+		};
 		BF979095211305FA003E91C0 = {
 			isa = PBXGroup;
 			children = (
@@ -146,9 +171,8 @@
 		BF9790BC21130C59003E91C0 /* CarListFlow */ = {
 			isa = PBXGroup;
 			children = (
+				79AF31F32114BDC800CD128D /* View */,
 				BF9790B3211306F0003E91C0 /* CarListAssembler.swift */,
-				BF9790A3211305FB003E91C0 /* CarListVC.swift */,
-				799E29902114A69700C835A8 /* CarListAdapter.swift */,
 				BF9790C7211312D5003E91C0 /* CarListViewModel.swift */,
 				BF9790C321131027003E91C0 /* CarListRouter.swift */,
 			);
@@ -171,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9790C121130F6A003E91C0 /* BaseRouter.swift */,
+				79AF31F92114BF5200CD128D /* TableView+Extension.swift */,
 				BF9790B52113079A003E91C0 /* BaseView.swift */,
 			);
 			path = Common;
@@ -280,6 +305,7 @@
 				BF9790A921130600003E91C0 /* Assets.xcassets in Resources */,
 				BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */,
 				799E298C2114874200C835A8 /* WeatherView.xib in Resources */,
+				79AF31F72114BDF400CD128D /* CarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,11 +379,13 @@
 				799D9DE22114158B00490627 /* PersistanceManager.swift in Sources */,
 				BF9790D721133575003E91C0 /* NetworkManager.swift in Sources */,
 				BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */,
+				79AF31FA2114BF5200CD128D /* TableView+Extension.swift in Sources */,
 				799D9DE4211415C000490627 /* LocalDataSource.swift in Sources */,
 				BF9790C021130DDF003E91C0 /* R.generated.swift in Sources */,
 				799D9DE62114175700490627 /* CarModel.swift in Sources */,
 				BF9790B4211306F0003E91C0 /* CarListAssembler.swift in Sources */,
 				BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */,
+				79AF31F62114BDF400CD128D /* CarCell.swift in Sources */,
 				BF9790B8211307F4003E91C0 /* UIView+Extension.swift in Sources */,
 				799E298E2114989E00C835A8 /* WeatherView.swift in Sources */,
 				799E298A21141FBF00C835A8 /* CoreData.xcdatamodeld in Sources */,

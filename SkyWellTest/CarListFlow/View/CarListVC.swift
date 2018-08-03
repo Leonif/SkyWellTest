@@ -42,6 +42,9 @@ class CarListVC: UIViewController, BaseView {
     func setupAdapter() {
         self.tableView.delegate = self.adapter
         self.tableView.dataSource = self.adapter
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
+        self.tableView.register(CarCell.self)
         
     }
     
@@ -60,7 +63,7 @@ class CarListVC: UIViewController, BaseView {
     
     func setupTableHeader() {
         self.headerView = WeatherView.view()
-        self.headerView.autoresizingMask = []
+//        self.headerView.autoresizingMask = []
 //        self.headerView = self.tableView.tableHeaderView
         self.tableView.tableHeaderView = self.headerView
         

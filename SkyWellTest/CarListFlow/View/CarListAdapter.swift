@@ -20,11 +20,12 @@ class CarListAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell: CarCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         
         let car = self.dataSource[indexPath.row]
         
-        cell.textLabel?.text = car.title
+        cell.bind(car: car)
+        
         
         return cell
     }
