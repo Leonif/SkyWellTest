@@ -15,6 +15,16 @@ class CarListVC: UIViewController, BaseView {
     var headerView: WeatherView!
     var adapter: CarListAdapter!
     
+    private let createCarButton: UIButton = {
+        let b = UIButton(frame: CGRect.zero)
+        let icon = R.image.plus()
+        b.setImage(icon, for: .normal)
+        b.imageView?.contentMode = .scaleAspectFit
+        
+        return b
+    }()
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +32,7 @@ class CarListVC: UIViewController, BaseView {
         self.setupTableHeader()
         self.setupAdapter()
         self.subscribeOnViewModel()
+        self.setupNavigationBar()
         self.dataLoad()
         
     }
@@ -38,6 +49,21 @@ class CarListVC: UIViewController, BaseView {
 //        self.carListViewModel.save(car: CarInfo(title: "Ferrari"))
     }
     
+    
+    func setupNavigationBar() {
+        
+        self.createCarButton.addTarget(self, action: #selector(self.createCar), for: .touchUpInside)
+        
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.createCarButton)
+        
+        navigationController?.navigationBar.barTintColor = UIColor.green
+        
+    }
+    @objc
+    func createCar() {
+        self.carListViewModel.addNewCar()
+    }
     
     func setupAdapter() {
         self.tableView.delegate = self.adapter
