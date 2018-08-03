@@ -117,9 +117,10 @@
 		79AF31F32114BDC800CD128D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BF9790A3211305FB003E91C0 /* CarListVC.swift */,
+				799E298F211498A400C835A8 /* WeatherView */,
 				79AF31F82114BDF900CD128D /* CarCell */,
 				799E29902114A69700C835A8 /* CarListAdapter.swift */,
+				BF9790A3211305FB003E91C0 /* CarListVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,7 +155,6 @@
 		BF9790A0211305FB003E91C0 /* SkyWellTest */ = {
 			isa = PBXGroup;
 			children = (
-				799E298F211498A400C835A8 /* WeatherView */,
 				BF9790A5211305FB003E91C0 /* Main.storyboard */,
 				BF9790BD21130C71003E91C0 /* Supported */,
 				BF9790BE21130C93003E91C0 /* Common */,

@@ -48,7 +48,9 @@ class PersistanceManagerImpl: PersistanceManager {
     }
     
     func removeRecord<Entity>(for entity: Entity) where Entity : Persistanble {
-        entity.mr_deleteEntity()
+        MagicalRecord.save ({ (localContext) in
+            entity.mr_deleteEntity(in: localContext)
+        })
     }
 }
 

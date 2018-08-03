@@ -46,6 +46,12 @@ class CarListVC: UIViewController, BaseView {
         tableView.estimatedRowHeight = 200
         self.tableView.register(CarCell.self)
         
+        self.adapter.onRemoveCar = { [weak self] carId in
+            self?.carListViewModel.removeCar(with: carId)
+        }
+        self.adapter.onSelectedCar = { [weak self] carId in
+            self?.carListViewModel.showCarDetail(for: carId)
+        }
     }
     
     
@@ -63,57 +69,6 @@ class CarListVC: UIViewController, BaseView {
     
     func setupTableHeader() {
         self.headerView = WeatherView.view()
-//        self.headerView.autoresizingMask = []
-//        self.headerView = self.tableView.tableHeaderView
         self.tableView.tableHeaderView = self.headerView
-        
-        
-        
-//        // 1. Setup AutoLayout
-//        self.tableView.setTableHeaderView(headerView: self.headerView)
-//
-//        // 2. First layout update
-//        self.tableView.updateHeaderViewFrame()
     }
 }
-
-
-
-
-
-
-
-extension UITableView {
-    
-    /// Set table header view & add Auto layout.
-    func setTableHeaderView(headerView: UIView) {
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Set first.
-        self.tableHeaderView = headerView
-        
-        // Then setup AutoLayout.
-        headerView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        headerView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        headerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        
-    }
-    
-    /// Update header view's frame.
-    func updateHeaderViewFrame() {
-        guard let headerView = self.tableHeaderView else { return }
-        
-        // Update the size of the header based on its internal content.
-        headerView.layoutIfNeeded()
-        
-        // ***Trigger table view to know that header should be updated.
-        let header = self.tableHeaderView
-        self.tableHeaderView = header
-    }
-}
-
-
-
-
-
-

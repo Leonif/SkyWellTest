@@ -113,3 +113,12 @@ extension UITableView {
     }
 }
 
+
+
+extension UITableView {
+    func update(completion: ActionClousure) {
+        self.beginUpdates()
+        completion()
+        self.endUpdates()
+    }
+}
