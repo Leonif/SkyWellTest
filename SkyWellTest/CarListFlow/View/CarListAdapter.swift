@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-
-
 class CarListAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var onRemoveCar: ((String) -> Void)?
@@ -26,14 +24,10 @@ class CarListAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
         let cell: CarCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         
         let car = self.dataSource[indexPath.row]
-        
         cell.bind(car: car)
-        
         
         return cell
     }
-    
-    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -41,7 +35,6 @@ class CarListAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
         
         self.onSelectedCar?(car.id)
     }
-    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -53,7 +46,6 @@ class CarListAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
     func getItem(for indexPath: IndexPath) -> CarInfo {
         return self.dataSource[indexPath.row]
     }
@@ -64,7 +56,5 @@ class CarListAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
         self.onRemoveCar?(item.id)
         
     }
-    
-    
     
 }

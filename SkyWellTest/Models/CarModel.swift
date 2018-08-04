@@ -18,15 +18,12 @@ struct CarInfo {
     }
 }
 
-
-
 protocol CarModel {
     func fetchAllCars(callback: ([CarEntity]) -> Void)
     func fetchCar(with id: String, callback: (CarEntity)-> Void)
     func saveCar(car: CarInfo, completion: @escaping (Bool) -> Void)
     func removeCar(with id: String)
 }
-
 
 class CarModelImpl: CarModel {
     

@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class CarListVC: UIViewController, BaseView {
     var carListViewModel: CarListViewModel!
     @IBOutlet weak var tableView: UITableView!
@@ -26,8 +25,7 @@ class CarListVC: UIViewController, BaseView {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.dataLoad()
+        self.reloadData()
     }
     
     override func viewDidLoad() {
@@ -39,34 +37,34 @@ class CarListVC: UIViewController, BaseView {
         self.setupNavigationBar()
     }
     
-    func dataLoad() {
+    func reloadData() {
         self.carListViewModel.fetchCarList()
         self.carListViewModel.fetchWeatherInfo()
     }
     
+    func subscribeOnViewModel() {
+        self.carListViewModel.onFetchedCarList = { [weak self] carList in
+            self?.adapter.dataSource = carList
+            self?.tableView.reloadData()
+        }
+        self.carListViewModel.onFetchedWeatherInfo = { weatherInfo in
+            self.headerView.bind(weatherInfo)
+        }
+    }
     
     func setupNavigationBar() {
-        
-        let navLabel = UILabel()
-        
-        let navTitle = NSMutableAttributedString(string: "Car List", attributes:
-            [NSAttributedStringKey.foregroundColor: UIColor.white,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 32)])
-        
-        navLabel.attributedText = navTitle
-        self.navigationItem.titleView = navLabel
-            
-        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x9AC649)
-        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0x9AC649)
-        navigationController?.navigationBar.isTranslucent = false
-        
-        
+        self.swt_setNavigationTitle(title: "Car List")
         self.createCarButton.addTarget(self, action: #selector(self.createCar), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.createCarButton)
     }
     @objc
     func createCar() {
         self.carListViewModel.addNewCar()
+    }
+    
+    func setupTableHeader() {
+        self.headerView = WeatherView.view()
+        self.tableView.tableHeaderView = self.headerView
     }
     
     func setupAdapter() {
@@ -82,23 +80,5 @@ class CarListVC: UIViewController, BaseView {
         self.adapter.onSelectedCar = { [weak self] carId in
             self?.carListViewModel.showCarDetail(for: carId)
         }
-    }
-    
-    
-    func subscribeOnViewModel() {
-        self.carListViewModel.onFetchedCarList = { [weak self] carList in
-            self?.adapter.dataSource = carList
-            self?.tableView.reloadData()
-        }
-        
-        self.carListViewModel.onFetchedWeatherInfo = { weatherInfo in
-            self.headerView.bind(weatherInfo)
-        }
-    }
-    
-    
-    func setupTableHeader() {
-        self.headerView = WeatherView.view()
-        self.tableView.tableHeaderView = self.headerView
     }
 }

@@ -26,7 +26,6 @@ class CarListRouterImpl: CarListRouter {
         self.view?.navigationController?.pushViewController(module, animated: true)
     }
     
-    
     func showCarDetailScreen(for id: String) {
         let module = CarInfoAssembler().assemble()
         

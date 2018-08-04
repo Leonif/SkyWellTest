@@ -19,6 +19,9 @@
 		79AF31FA2114BF5200CD128D /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF31F92114BF5200CD128D /* TableView+Extension.swift */; };
 		79AF31FC2114CE6100CD128D /* AddNewCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF31FB2114CE6100CD128D /* AddNewCarViewModel.swift */; };
 		79AF32002114DFE100CD128D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF31FF2114DFE100CD128D /* UIColor+Extension.swift */; };
+		79AF32022115934000CD128D /* CarInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF32012115934000CD128D /* CarInfoAdapter.swift */; };
+		79AF3205211595E800CD128D /* CoupleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF3203211595E800CD128D /* CoupleCell.swift */; };
+		79AF3206211595E800CD128D /* CoupleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AF3204211595E800CD128D /* CoupleCell.xib */; };
 		BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A1211305FB003E91C0 /* AppDelegate.swift */; };
 		BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A3211305FB003E91C0 /* CarListVC.swift */; };
 		BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A5211305FB003E91C0 /* Main.storyboard */; };
@@ -28,7 +31,6 @@
 		BF9790B62113079A003E91C0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790B52113079A003E91C0 /* BaseView.swift */; };
 		BF9790B8211307F4003E91C0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790B7211307F4003E91C0 /* UIView+Extension.swift */; };
 		BF9790C021130DDF003E91C0 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790BF21130DDF003E91C0 /* R.generated.swift */; };
-		BF9790C221130F6A003E91C0 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790C121130F6A003E91C0 /* BaseRouter.swift */; };
 		BF9790C421131027003E91C0 /* CarListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790C321131027003E91C0 /* CarListRouter.swift */; };
 		BF9790C8211312D5003E91C0 /* CarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790C7211312D5003E91C0 /* CarListViewModel.swift */; };
 		BF9790CA21131B76003E91C0 /* AddNewCarScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790C921131B76003E91C0 /* AddNewCarScreenVC.swift */; };
@@ -56,6 +58,9 @@
 		79AF31F92114BF5200CD128D /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		79AF31FB2114CE6100CD128D /* AddNewCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCarViewModel.swift; sourceTree = "<group>"; };
 		79AF31FF2114DFE100CD128D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		79AF32012115934000CD128D /* CarInfoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoAdapter.swift; sourceTree = "<group>"; };
+		79AF3203211595E800CD128D /* CoupleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleCell.swift; sourceTree = "<group>"; };
+		79AF3204211595E800CD128D /* CoupleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoupleCell.xib; sourceTree = "<group>"; };
 		BF97909E211305FB003E91C0 /* SkyWellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9790A1211305FB003E91C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF9790A3211305FB003E91C0 /* CarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListVC.swift; sourceTree = "<group>"; };
@@ -67,7 +72,6 @@
 		BF9790B52113079A003E91C0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		BF9790B7211307F4003E91C0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BF9790BF21130DDF003E91C0 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		BF9790C121130F6A003E91C0 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		BF9790C321131027003E91C0 /* CarListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRouter.swift; sourceTree = "<group>"; };
 		BF9790C7211312D5003E91C0 /* CarListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
 		BF9790C921131B76003E91C0 /* AddNewCarScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCarScreenVC.swift; sourceTree = "<group>"; };
@@ -138,6 +142,15 @@
 			path = CarCell;
 			sourceTree = "<group>";
 		};
+		79AF3207211595F400CD128D /* CoupleCell */ = {
+			isa = PBXGroup;
+			children = (
+				79AF3203211595E800CD128D /* CoupleCell.swift */,
+				79AF3204211595E800CD128D /* CoupleCell.xib */,
+			);
+			path = CoupleCell;
+			sourceTree = "<group>";
+		};
 		BF979095211305FA003E91C0 = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +203,6 @@
 				BF9790A821130600003E91C0 /* Assets.xcassets */,
 				BF9790A1211305FB003E91C0 /* AppDelegate.swift */,
 				BF9790BF21130DDF003E91C0 /* R.generated.swift */,
-				BF9790B7211307F4003E91C0 /* UIView+Extension.swift */,
 			);
 			path = Supported;
 			sourceTree = "<group>";
@@ -198,7 +210,7 @@
 		BF9790BE21130C93003E91C0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BF9790C121130F6A003E91C0 /* BaseRouter.swift */,
+				BF9790B7211307F4003E91C0 /* UIView+Extension.swift */,
 				79AF31F92114BF5200CD128D /* TableView+Extension.swift */,
 				79AF31FF2114DFE100CD128D /* UIColor+Extension.swift */,
 				BF9790B52113079A003E91C0 /* BaseView.swift */,
@@ -220,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				BF9790D121132BD1003E91C0 /* CarInfoAssembler.swift */,
+				79AF32012115934000CD128D /* CarInfoAdapter.swift */,
+				79AF3207211595F400CD128D /* CoupleCell */,
 				BF9790CE21132B7A003E91C0 /* CarInfoVC.swift */,
 			);
 			path = CarInfoFlow;
@@ -312,6 +326,7 @@
 				BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */,
 				799E298C2114874200C835A8 /* WeatherView.xib in Resources */,
 				79AF31F72114BDF400CD128D /* CarCell.xib in Resources */,
+				79AF3206211595E800CD128D /* CoupleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +398,7 @@
 				BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */,
 				BF9790DA211335E1003E91C0 /* CloudDataSource.swift in Sources */,
 				799D9DE22114158B00490627 /* PersistanceManager.swift in Sources */,
+				79AF3205211595E800CD128D /* CoupleCell.swift in Sources */,
 				BF9790D721133575003E91C0 /* NetworkManager.swift in Sources */,
 				BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */,
 				79AF31FC2114CE6100CD128D /* AddNewCarViewModel.swift in Sources */,
@@ -390,6 +406,7 @@
 				799D9DE4211415C000490627 /* LocalDataSource.swift in Sources */,
 				BF9790C021130DDF003E91C0 /* R.generated.swift in Sources */,
 				799D9DE62114175700490627 /* CarModel.swift in Sources */,
+				79AF32022115934000CD128D /* CarInfoAdapter.swift in Sources */,
 				BF9790B4211306F0003E91C0 /* CarListAssembler.swift in Sources */,
 				BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */,
 				79AF31F62114BDF400CD128D /* CarCell.swift in Sources */,
@@ -403,7 +420,6 @@
 				BF9790D221132BD1003E91C0 /* CarInfoAssembler.swift in Sources */,
 				79AF32002114DFE100CD128D /* UIColor+Extension.swift in Sources */,
 				BF9790B62113079A003E91C0 /* BaseView.swift in Sources */,
-				BF9790C221130F6A003E91C0 /* BaseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = UINavigationController(rootViewController: module)
         self.window?.makeKeyAndVisible()
         
+        UIApplication.shared.statusBarStyle = .lightContent
         
         return true
     }

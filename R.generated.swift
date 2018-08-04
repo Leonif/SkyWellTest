@@ -79,16 +79,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `CarCell`.
     static let carCell = _R.nib._CarCell()
+    /// Nib `CoupleCell`.
+    static let coupleCell = _R.nib._CoupleCell()
     /// Nib `WeatherView`.
     static let weatherView = _R.nib._WeatherView()
     
     /// `UINib(name: "CarCell", in: bundle)`
     static func carCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.carCell)
+    }
+    
+    /// `UINib(name: "CoupleCell", in: bundle)`
+    static func coupleCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.coupleCell)
     }
     
     /// `UINib(name: "WeatherView", in: bundle)`
@@ -99,11 +106,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `cell`.
-    static let cell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell")
-    
     fileprivate init() {}
   }
   
@@ -172,6 +176,17 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "car_placeholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'car_placeholder' is used in nib 'CarCell', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _CoupleCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CoupleCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> CoupleCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CoupleCell
       }
       
       fileprivate init() {}

@@ -11,7 +11,11 @@ import UIKit
 
 class CarInfoAssembler {
     func assemble() -> UIViewController {
+        
+        let adapter = CarInfoAdapter()
+        
         let view =  R.storyboard.main.carInfoVC()!
+        view.adapter = adapter
         return view
     }
     

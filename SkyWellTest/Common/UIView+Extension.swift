@@ -35,6 +35,24 @@ extension UIViewController {
 }
 
 
+extension UIViewController {
+    func swt_setNavigationTitle(title: String) {
+        let navLabel = UILabel()
+        let navTitle = NSMutableAttributedString(string: title, attributes:
+            [NSAttributedStringKey.foregroundColor: UIColor.white,
+             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 32)])
+        
+        navLabel.attributedText = navTitle
+        self.navigationItem.titleView = navLabel
+        
+        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x9AC649)
+        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0x9AC649)
+        navigationController?.navigationBar.isTranslucent = false
+    }
+}
+
+
+
 
 
 
