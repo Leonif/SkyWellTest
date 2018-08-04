@@ -19,11 +19,11 @@ class CarInfoAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
 
     var carInfo: CarInfo! {
         didSet {
-            self.dataSource = [ .couple(("car:", self.carInfo.title), ("Price:", "20000$")),
-                                .horizontal("Engine:", "20i.e"),
-                                .horizontal("Transmission:", "manual"),
-                                .horizontal("Condition:", "good"),
-                                .vertical("description","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five cen- turies, but also the leap into electronic typeset- ting, remaining essentially unchanged. It was popularised in the 1960s with the release of Let- raset sheets containing Lorem Ipsum passages, and more recently with desktop publishing soft-")
+            self.dataSource = [ .couple(("car:", self.carInfo.title), ("Price:", String(format: "%.0f", carInfo.price))),
+                                .horizontal("Engine:", carInfo.engine),
+                                .horizontal("Transmission:", carInfo.transmission.string),
+                                .horizontal("Condition:", carInfo.condition.string),
+                                .vertical("description",carInfo.descrip)
             ]
         }
     }

@@ -15,7 +15,7 @@ class CarMapper {
                          price: input.price,
                          engine: input.engine ?? "Uknown",
                          transmission: TransmissionType(rawValue: Int(input.transmission)) ?? .none,
-                         condition: ConditionType(rawValue: Int(input.condition)) ?? .none)
+                         condition: ConditionType(rawValue: Int(input.condition)) ?? .none, descrip: input.descrip ?? "No description")
     }
     
     

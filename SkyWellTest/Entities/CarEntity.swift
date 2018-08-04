@@ -15,4 +15,5 @@ struct CarEntity {
     var engine: String
     var transmission: TransmissionType
     var condition: ConditionType
+    var descrip: String
 }

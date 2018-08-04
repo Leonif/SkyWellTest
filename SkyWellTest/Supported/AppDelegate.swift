@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().tintColor = .white
         
         return true
     }

@@ -10,10 +10,34 @@ import Foundation
 
 enum TransmissionType: Int {
     case manual = 0, auto, none
+    
+    var string: String {
+        switch self {
+        case .manual:
+            return "manual"
+        case .auto:
+            return "auto"
+        case .none:
+            return "none"
+        }
+    }
 }
 
 enum ConditionType: Int {
     case good = 0, bad, excellent, none
+    
+    var string: String {
+        switch self {
+        case .good:
+            return "good"
+        case .bad:
+            return "bad"
+        case .excellent:
+            return "excellent"
+        case .none:
+            return "none"
+        }
+    }
 }
 
 

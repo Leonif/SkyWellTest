@@ -15,13 +15,15 @@ struct CarInfo {
     var engine: String
     var transmission: TransmissionType
     var condition: ConditionType
+    var descrip: String
     
-    init(id: String = UUID().uuidString, title: String, price: Double, engine: String, transmission: TransmissionType, condition: ConditionType) {
+    init(id: String = UUID().uuidString, title: String, price: Double, engine: String, transmission: TransmissionType, condition: ConditionType, description: String) {
         self.id = id
         self.title = title
         self.price = price
         self.engine = engine
         self.transmission = transmission
         self.condition = condition
+        self.descrip = description
     }
 }

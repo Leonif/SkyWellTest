@@ -16,7 +16,7 @@ class CarEntityMapper {
                        price: input.price,
                        engine: input.engine,
                        transmission: input.transmission,
-                       condition: input.condition)
+                       condition: input.condition, description: input.descrip)
     }
     
     func transformArray(inputArray: [CarEntity]) -> [CarInfo] {
