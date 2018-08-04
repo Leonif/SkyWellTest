@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct CarInfo {
-    let id: String
-    var title: String
-    
-    init(id: String = UUID().uuidString, title: String) {
-        self.id = id
-        self.title = title
-    }
+enum TransmissionType: Int {
+    case manual = 0, auto, none
 }
+
+enum ConditionType: Int {
+    case good = 0, bad, excellent, none
+}
+
+
 
 protocol CarModel {
     func fetchAllCars(callback: ([CarEntity]) -> Void)

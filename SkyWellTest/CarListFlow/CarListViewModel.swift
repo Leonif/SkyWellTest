@@ -21,12 +21,17 @@ protocol CarListViewModel {
     func addNewCar()
 }
 
+
+
+
+
 class CarListViewModelImpl: CarListViewModel {
     
     private var weatherModel: WeatherModel!
     private var carModel: CarModel!
     var onFetchedCarList: (([CarInfo]) -> Void)?
     var onFetchedWeatherInfo: ((WeatherEntity) -> Void)?
+    private var mapper: CarEntityMapper = CarEntityMapper()
     
     var router: CarListRouter!
     
@@ -46,9 +51,7 @@ class CarListViewModelImpl: CarListViewModel {
     
     func fetchCarList() {
         self.carModel.fetchAllCars { (carList) in
-            
-            
-            self.onFetchedCarList?(carList.map { CarInfo(id: $0.id, title: $0.title) })
+            self.onFetchedCarList?( mapper.transformArray(inputArray: carList))
         }
     }
     

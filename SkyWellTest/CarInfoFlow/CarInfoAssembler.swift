@@ -11,11 +11,15 @@ import UIKit
 
 class CarInfoAssembler {
     func assemble() -> UIViewController {
-        
-        let adapter = CarInfoAdapter()
+        let persistanceManager = (UIApplication.shared.delegate as? AppDelegate)!.persistanceManager
+        let localDataSource = LocalDataSourceImpl(persistanceManager: persistanceManager)
+        let carModel = CarModelImpl(localDataSource: localDataSource)
+        let carInfoViewModel = CarInfoViewModelImpl(carModel: carModel)
         
         let view =  R.storyboard.main.carInfoVC()!
+        let adapter = CarInfoAdapter()
         view.adapter = adapter
+        view.carInfoViewModel = carInfoViewModel
         return view
     }
     

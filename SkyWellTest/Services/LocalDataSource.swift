@@ -15,16 +15,13 @@ protocol LocalDataSource {
     func removeCar(with id: String)
 }
 
-struct CarEntity {
-    var id: String
-    var title: String
-}
 
 
 
 class LocalDataSourceImpl: LocalDataSource {
     
     private var persistanceManager: PersistanceManager!
+    private var mapper: CarMapper = CarMapper()
     
     init(persistanceManager: PersistanceManager) {
         self.persistanceManager = persistanceManager
@@ -32,20 +29,23 @@ class LocalDataSourceImpl: LocalDataSource {
     
     func fetchAllCars(callback: ([CarEntity]) -> Void) {
         let cars: [Car] = self.persistanceManager.fetchAllRecords()
-        let entityArray = cars.map { CarEntity(id: $0.id ?? "no id", title: $0.title ?? "No name") }
+        let entityArray = self.mapper.transformArray(inputArray: cars)
         callback(entityArray)
     }
     
     func fetchCar(with id: String, callback: (CarEntity) -> Void) {
         let car: Car = self.persistanceManager.fetchRecord(with: id)
-        callback(CarEntity(id: car.id ?? "no id", title: car.title ?? "No name"))
+        callback(mapper.transformObject(input: car))
     }
     
     func saveCar(car: CarInfo, completion: @escaping (Bool) -> Void) {
-        
         self.persistanceManager.saveRecord(saveCode: { (carObject: Car) in
             carObject.id = car.id
             carObject.title = car.title
+            carObject.price = car.price
+            carObject.engine = car.engine
+            carObject.transmission = Int16(car.transmission.rawValue)
+            carObject.condition = Int16(car.condition.rawValue)
         }) { (success) in
             completion(success)
         }

@@ -17,7 +17,6 @@ class WeatherView: UIView {
     
     class func view() -> WeatherView {
         let v = Bundle.main.loadNibNamed("WeatherView", owner: nil)?.first as! WeatherView
-//        v.frame = CGRect(x: 0, y: 0, width: width, height: height)
         
         return v
     }

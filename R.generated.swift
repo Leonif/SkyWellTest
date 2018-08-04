@@ -79,12 +79,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     /// Nib `CarCell`.
     static let carCell = _R.nib._CarCell()
     /// Nib `CoupleCell`.
     static let coupleCell = _R.nib._CoupleCell()
+    /// Nib `HorizontalCell`.
+    static let horizontalCell = _R.nib._HorizontalCell()
+    /// Nib `PhotoCollectionView`.
+    static let photoCollectionView = _R.nib._PhotoCollectionView()
+    /// Nib `VerticalCell`.
+    static let verticalCell = _R.nib._VerticalCell()
     /// Nib `WeatherView`.
     static let weatherView = _R.nib._WeatherView()
     
@@ -96,6 +102,21 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "CoupleCell", in: bundle)`
     static func coupleCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.coupleCell)
+    }
+    
+    /// `UINib(name: "HorizontalCell", in: bundle)`
+    static func horizontalCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.horizontalCell)
+    }
+    
+    /// `UINib(name: "PhotoCollectionView", in: bundle)`
+    static func photoCollectionView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.photoCollectionView)
+    }
+    
+    /// `UINib(name: "VerticalCell", in: bundle)`
+    static func verticalCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.verticalCell)
     }
     
     /// `UINib(name: "WeatherView", in: bundle)`
@@ -162,6 +183,7 @@ struct _R: Rswift.Validatable {
   
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _PhotoCollectionView.validate()
       try _WeatherView.validate()
       try _CarCell.validate()
     }
@@ -187,6 +209,43 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> CoupleCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CoupleCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _HorizontalCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "HorizontalCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> HorizontalCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HorizontalCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _PhotoCollectionView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PhotoCollectionView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> PhotoCollectionView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PhotoCollectionView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "car_placeholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'car_placeholder' is used in nib 'PhotoCollectionView', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _VerticalCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "VerticalCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> VerticalCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VerticalCell
       }
       
       fileprivate init() {}

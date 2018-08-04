@@ -17,7 +17,6 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     
     private let addCarButton: UIButton = {
         let b = UIButton(frame: CGRect.zero)
-        
         let attributedTitle
             = NSAttributedString(string: "Add Car",
                                  attributes: [
@@ -38,16 +37,15 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     }
     
     func setupNavigationBar() {
-        let textAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.white,
-        ]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.swt_setNavigationTitle(title: "")
         self.addCarButton.addTarget(self, action: #selector(self.createCar), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.addCarButton)
     }
     @objc
     func createCar() {
-        self.addNewCarViewModel.save(car: CarInfo(title: carTitleTextField.text ?? "No car name"))
+        let carInfo = CarInfo(title: carTitleTextField.text ?? "No car name", price: 20000, engine: "2.0i.e", transmission: .manual, condition: .good)
+        
+        self.addNewCarViewModel.save(car: carInfo)
         
     }
 }

@@ -10,42 +10,35 @@ import Foundation
 import UIKit
 
 class CarInfoVC: UIViewController, BaseView {
-    
-    var carId: String?
+    var carId: String!
     var adapter: CarInfoAdapter!
     @IBOutlet weak var tableView: UITableView!
-    
+    var carInfoViewModel: CarInfoViewModel!
+    var headerView: PhotoCollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupTableHeader()
         self.setupAdapter()
         self.setupNavigationBar()
-        
-        
-        print("CarInfoVC is opened with \(carId)")
-        
+        self.sunscribeOnViewModel()
+    }
+    
+    func sunscribeOnViewModel() {
+        self.carInfoViewModel.fetchCarInfo(with: self.carId) { [weak self] (carInfo) in
+            self?.adapter.carInfo = carInfo
+        }
     }
     
     func setupNavigationBar() {
-//        let navLabel = UILabel()
-//        let navTitle = NSMutableAttributedString(string: "Title", attributes:
-//            [NSAttributedStringKey.foregroundColor: UIColor.white,
-//             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 32)])
-//
-//        navLabel.attributedText = navTitle
-//        self.navigationItem.titleView = navLabel
-//
-//        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x9AC649)
-//        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0x9AC649)
-//        navigationController?.navigationBar.isTranslucent = false
-        
         self.swt_setNavigationTitle(title: "Title")
-        
-        
-        
     }
     
+    func setupTableHeader() {
+        self.headerView = PhotoCollectionView.view()
+        self.tableView.tableHeaderView = self.headerView
+    }
     
     
     
@@ -55,6 +48,8 @@ class CarInfoVC: UIViewController, BaseView {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
         self.tableView.register(CoupleCell.self)
+        self.tableView.register(HorizontalCell.self)
+        self.tableView.register(VerticalCell.self)
     }
     
 }
