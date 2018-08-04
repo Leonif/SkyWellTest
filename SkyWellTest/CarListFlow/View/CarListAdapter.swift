@@ -54,7 +54,5 @@ class CarListAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
         guard let index = self.dataSource.index(where: { $0.id == item.id  }) else { fatalError("item doesnt exist") }
         self.dataSource.remove(at: index)
         self.onRemoveCar?(item.id)
-        
     }
-    
 }

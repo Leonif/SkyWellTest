@@ -21,6 +21,17 @@ enum TransmissionType: Int {
             return "none"
         }
     }
+    
+    static func enumFromString(string: String) -> TransmissionType {
+        switch string {
+        case "manual":
+            return .manual
+        case "auto":
+            return .auto
+        default:
+            return .none
+        }
+    }
 }
 
 enum ConditionType: Int {
@@ -38,6 +49,20 @@ enum ConditionType: Int {
             return "none"
         }
     }
+    
+    static func enumFromString(string: String) -> ConditionType {
+        switch string {
+        case "good":
+            return .good
+        case "bad":
+            return .bad
+        case "excellent":
+            return .excellent
+        default:
+            return .none
+        }
+    }
+    
 }
 
 

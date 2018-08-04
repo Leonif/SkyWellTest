@@ -12,7 +12,15 @@ import UIKit
 
 class AddNewCarScreenVC: UIViewController, BaseView {
     
-    @IBOutlet weak var carTitleTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var engineLabel: UILabel!
+    @IBOutlet weak var transmissionLabel: UILabel!
+    @IBOutlet weak var conditionLabel: UILabel!
+    @IBOutlet weak var descritionTextView: UITextView!
+    
+    
+    
     var addNewCarViewModel: AddNewCarViewModel!
     
     private let addCarButton: UIButton = {
@@ -31,8 +39,15 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar()
-        self.addNewCarViewModel.onSaved = {
-            self.navigationController?.popViewController(animated: true)
+        self.subscribeOnViewModel()
+    }
+    
+    func subscribeOnViewModel() {
+        self.addNewCarViewModel.onSaved = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        self.addNewCarViewModel.onError = { [weak self] errorMessage in
+            self?.onError(with: errorMessage)
         }
     }
     
@@ -43,8 +58,12 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     }
     @objc
     func createCar() {
-        let carInfo = CarInfo(title: carTitleTextField.text ?? "No car name", price: 20000, engine: "2.0i.e", transmission: .manual, condition: .good,
-                              description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+        let carInfo = CarInfo(title: titleTextField.text ?? "No car name",
+                              price: Double(priceTextField.text ?? "0.0") ?? 0.0,
+                              engine: "2.0i.e",
+                              transmission: TransmissionType.enumFromString(string: self.transmissionLabel.text ?? ""),
+                              condition: ConditionType.enumFromString(string: self.conditionLabel.text ?? ""),
+                              description: self.descritionTextView.text)
         
         self.addNewCarViewModel.save(car: carInfo)
         

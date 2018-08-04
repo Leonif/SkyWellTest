@@ -21,10 +21,6 @@ protocol CarListViewModel {
     func addNewCar()
 }
 
-
-
-
-
 class CarListViewModelImpl: CarListViewModel {
     
     private var weatherModel: WeatherModel!
@@ -35,12 +31,9 @@ class CarListViewModelImpl: CarListViewModel {
     
     var router: CarListRouter!
     
-    
     init(weatherModel: WeatherModel, carModel: CarModel) {
-        
         self.weatherModel = weatherModel
         self.carModel = carModel
-        
     }
     
     func fetchWeatherInfo() {
@@ -59,7 +52,6 @@ class CarListViewModelImpl: CarListViewModel {
         self.router.showAddCarScreen()
     }
     
-    
     func showCarDetail(for id: String) {
         self.router.showCarDetailScreen(for: id)
     }
@@ -68,11 +60,9 @@ class CarListViewModelImpl: CarListViewModel {
         carModel.removeCar(with: id)
     }
     
-    
     func save(car: CarInfo, completion: @escaping (Bool) -> Void) {
         carModel.saveCar(car: car, completion: { success in
             completion(success)
         })
     }
-    
 }

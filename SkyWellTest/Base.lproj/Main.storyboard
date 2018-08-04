@@ -155,6 +155,12 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tV4-bI-Q0Z">
+                                                <rect key="frame" x="16" y="280" width="72" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.60392156860000001" green="0.77647058820000003" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -163,6 +169,7 @@
                                             <constraint firstAttribute="trailing" secondItem="gpM-17-Hza" secondAttribute="trailing" constant="16" id="1bz-tF-gIC"/>
                                             <constraint firstItem="M6f-L6-C5y" firstAttribute="leading" secondItem="mC7-lt-Dxd" secondAttribute="leading" constant="34" id="7PD-om-Xki"/>
                                             <constraint firstAttribute="trailing" secondItem="M6f-L6-C5y" secondAttribute="trailing" constant="34" id="Fsw-eY-mET"/>
+                                            <constraint firstItem="tV4-bI-Q0Z" firstAttribute="leading" secondItem="JZA-x7-KiI" secondAttribute="leading" id="Jih-l6-2tG"/>
                                             <constraint firstItem="fTN-tT-PS4" firstAttribute="top" secondItem="M6f-L6-C5y" secondAttribute="bottom" constant="29" id="LsI-cX-iu8"/>
                                             <constraint firstItem="gpM-17-Hza" firstAttribute="top" secondItem="fTN-tT-PS4" secondAttribute="bottom" constant="8" id="PYY-Dt-rhp"/>
                                             <constraint firstItem="fTN-tT-PS4" firstAttribute="leading" secondItem="mC7-lt-Dxd" secondAttribute="leading" constant="16" id="QC2-xe-Gnb"/>
@@ -174,6 +181,7 @@
                                             <constraint firstItem="o9y-vV-jwh" firstAttribute="leading" secondItem="mC7-lt-Dxd" secondAttribute="leading" constant="16" id="nbB-6e-dJf"/>
                                             <constraint firstAttribute="trailing" secondItem="JZA-x7-KiI" secondAttribute="trailing" constant="16" id="p5k-4i-cMA"/>
                                             <constraint firstItem="M6f-L6-C5y" firstAttribute="top" secondItem="mC7-lt-Dxd" secondAttribute="top" constant="36" id="rUt-Qs-F7D"/>
+                                            <constraint firstItem="JZA-x7-KiI" firstAttribute="top" secondItem="tV4-bI-Q0Z" secondAttribute="bottom" constant="4" id="s0S-BS-30X"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -197,7 +205,12 @@
                         <viewLayoutGuide key="safeArea" id="gha-KT-HFP"/>
                     </view>
                     <connections>
-                        <outlet property="carTitleTextField" destination="fTN-tT-PS4" id="Xh3-vT-4JR"/>
+                        <outlet property="conditionLabel" destination="mGm-hI-HNy" id="WcC-D5-QIJ"/>
+                        <outlet property="descritionTextView" destination="JZA-x7-KiI" id="Nep-Fa-ohW"/>
+                        <outlet property="engineLabel" destination="LCR-6l-ejm" id="Wuk-xd-PNq"/>
+                        <outlet property="priceTextField" destination="gpM-17-Hza" id="G2C-xg-PS4"/>
+                        <outlet property="titleTextField" destination="fTN-tT-PS4" id="1zJ-uP-QEf"/>
+                        <outlet property="transmissionLabel" destination="usg-Wn-xcx" id="TRV-B7-b5n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkO-GM-CSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
