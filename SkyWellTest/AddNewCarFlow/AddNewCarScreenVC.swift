@@ -18,8 +18,7 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     @IBOutlet weak var transmissionLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var descritionTextView: UITextView!
-    
-    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var addNewCarViewModel: AddNewCarViewModel!
     
@@ -40,6 +39,25 @@ class AddNewCarScreenVC: UIViewController, BaseView {
         super.viewDidLoad()
         self.setupNavigationBar()
         self.subscribeOnViewModel()
+        self.setupKeyboardObserver()
+    }
+    
+    func setupKeyboardObserver() {
+        // Observe keyboard change
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc
+    func keyboardWillHide(notification: NSNotification) {
+        self.scrollView.contentInset.bottom = 0
+    }
+    
+    @objc
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.scrollView.contentInset.bottom = keyboardSize.height
+        }
     }
     
     func subscribeOnViewModel() {
@@ -58,14 +76,20 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     }
     @objc
     func createCar() {
-        let carInfo = CarInfo(title: titleTextField.text ?? "No car name",
+        self.addCarButton.isEnabled = false
+        
+        let carInfo = CarInfo(image: #imageLiteral(resourceName: "test_car"), title: titleTextField.text ?? "No car name",
                               price: Double(priceTextField.text ?? "0.0") ?? 0.0,
                               engine: "2.0i.e",
                               transmission: TransmissionType.enumFromString(string: self.transmissionLabel.text ?? ""),
                               condition: ConditionType.enumFromString(string: self.conditionLabel.text ?? ""),
                               description: self.descritionTextView.text)
-        
         self.addNewCarViewModel.save(car: carInfo)
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 }

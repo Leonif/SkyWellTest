@@ -62,6 +62,11 @@ class CarListVC: UIViewController, BaseView {
         self.carListViewModel.addNewCar()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tableView.sizeHeaderToFit()
+    }
+    
     func setupTableHeader() {
         self.headerView = WeatherView.view()
         self.tableView.tableHeaderView = self.headerView

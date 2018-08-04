@@ -208,6 +208,7 @@
                         <outlet property="descritionTextView" destination="JZA-x7-KiI" id="Nep-Fa-ohW"/>
                         <outlet property="engineLabel" destination="LCR-6l-ejm" id="Wuk-xd-PNq"/>
                         <outlet property="priceTextField" destination="gpM-17-Hza" id="G2C-xg-PS4"/>
+                        <outlet property="scrollView" destination="0as-i8-X0h" id="66v-uG-qZ6"/>
                         <outlet property="titleTextField" destination="fTN-tT-PS4" id="1zJ-uP-QEf"/>
                         <outlet property="transmissionLabel" destination="usg-Wn-xcx" id="TRV-B7-b5n"/>
                     </connections>

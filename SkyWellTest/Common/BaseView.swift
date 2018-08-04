@@ -21,7 +21,9 @@ protocol BaseView: class {
 
 extension BaseView where Self: UIViewController {
     func showLoading(with text: String) {
-        self.view.pb_startActivityIndicator(with: text)
+        DispatchQueue.main.async {
+            self.view.pb_startActivityIndicator(with: text)
+        }
     }
     
     func hideLoading() {

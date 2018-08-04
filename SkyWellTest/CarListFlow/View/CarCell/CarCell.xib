@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ue3-Y5-ONS">
-                        <rect key="frame" x="84" y="8" width="147.5" height="89.5"/>
+                        <rect key="frame" x="120" y="8" width="147.5" height="89.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfe-HF-Reg">
                                 <rect key="frame" x="0.0" y="0.0" width="19.5" height="16"/>
@@ -49,7 +49,11 @@
                         </subviews>
                     </stackView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="CGC-fS-hPB">
-                        <rect key="frame" x="4" y="4" width="64" height="97.5"/>
+                        <rect key="frame" x="4" y="1.5" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="PLI-lX-oDp"/>
+                            <constraint firstAttribute="width" constant="100" id="rfg-Ok-bwH"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.60392156860000001" green="0.77647058820000003" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,7 +63,7 @@
                     <constraint firstItem="Ue3-Y5-ONS" firstAttribute="leading" secondItem="CGC-fS-hPB" secondAttribute="trailing" constant="16" id="EDZ-Qq-aIF"/>
                     <constraint firstItem="Ue3-Y5-ONS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LCF-PH-tF3"/>
                     <constraint firstItem="CGC-fS-hPB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="PFy-6J-dnd"/>
-                    <constraint firstItem="CGC-fS-hPB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="fXR-IS-ui9"/>
+                    <constraint firstItem="CGC-fS-hPB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="250" constant="4" id="fXR-IS-ui9"/>
                     <constraint firstAttribute="bottom" secondItem="CGC-fS-hPB" secondAttribute="bottom" constant="4" id="nYi-yz-cGc"/>
                 </constraints>
             </tableViewCellContentView>

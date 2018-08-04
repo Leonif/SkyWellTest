@@ -14,6 +14,7 @@ class CarCell: UITableViewCell, NibLoadableReusable {
     @IBOutlet weak var carPriceLabel: UILabel!
     
     func bind(car: CarInfo) {
+        self.carImageView.image = car.image
         self.carNameLabel.text = car.title
         self.carPriceLabel.text = String(format:"%.0f", car.price)
     }

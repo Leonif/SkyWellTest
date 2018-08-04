@@ -28,11 +28,18 @@ class CarInfoVC: UIViewController, BaseView {
     func sunscribeOnViewModel() {
         self.carInfoViewModel.fetchCarInfo(with: self.carId) { [weak self] (carInfo) in
             self?.adapter.carInfo = carInfo
+            self?.headerView.bind([carInfo.image])
         }
     }
     
     func setupNavigationBar() {
         self.swt_setNavigationTitle(title: "Title")
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tableView.sizeHeaderToFit()
     }
     
     func setupTableHeader() {

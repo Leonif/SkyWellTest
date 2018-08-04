@@ -12,6 +12,7 @@ class CarEntityMapper {
     func transformObject(input: CarEntity) -> CarInfo {
         
         return CarInfo(id: input.id,
+                       image: input.image,
                        title: input.title,
                        price: input.price,
                        engine: input.engine,

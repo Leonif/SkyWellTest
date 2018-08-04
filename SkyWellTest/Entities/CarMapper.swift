@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class CarMapper {
     func transformObject(input: Car) -> CarEntity {
-        return CarEntity(id: input.id ?? "no id",
+        
+        guard let filePath = input.filePath else { fatalError() }
+        
+        guard let image = UIImage(contentsOfFile: filePath) else { fatalError() }
+
+        return CarEntity(id: input.id ?? "no id", image: image,
                          title: input.title ?? "No name",
                          price: input.price,
                          engine: input.engine ?? "Uknown",
