@@ -46,7 +46,7 @@ class LocalDataSourceImpl: LocalDataSource {
             carObject.engine = car.engine
             carObject.transmission = Int16(car.transmission.rawValue)
             carObject.condition = Int16(car.condition.rawValue)
-            carObject.descrip = car.descrip
+            carObject.descrip = car.descrip.isEmpty ? "No description" : car.descrip
         }) { (success) in
             completion(success)
         }
