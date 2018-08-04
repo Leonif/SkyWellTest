@@ -60,5 +60,4 @@ class PersistanceManagerFactory {
     public static func createPersistanceManager() -> PersistanceManager {
         return PersistanceManagerImpl()
     }
-    
 }

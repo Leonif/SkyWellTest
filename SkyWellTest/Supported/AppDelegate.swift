@@ -10,7 +10,6 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
     let networkManager: NetworkManager = NetworkManagerFactory.createNetworkManager()
     let persistanceManager: PersistanceManager = PersistanceManagerFactory.createPersistanceManager()
@@ -27,11 +26,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-    
-    
-
-   
-
 }
 
