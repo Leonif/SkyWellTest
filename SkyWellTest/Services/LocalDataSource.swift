@@ -50,7 +50,7 @@ class LocalDataSourceImpl: LocalDataSource {
         let documentPath = documentsURL.path
         
         // Create filePath URL by appending final path component (name of image)
-        let filePath = documentsURL.appendingPathComponent("car.png")
+        let filePath = documentsURL.appendingPathComponent("car\(UUID().uuidString).png")
         
         
         // Check for existing image data

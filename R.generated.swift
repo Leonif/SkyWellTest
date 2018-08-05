@@ -86,7 +86,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
   struct nib {
     /// Nib `AddNewCarCell`.
     static let addNewCarCell = _R.nib._AddNewCarCell()
@@ -100,6 +100,8 @@ struct R: Rswift.Validatable {
     static let horizontalCell = _R.nib._HorizontalCell()
     /// Nib `PhotoCollectionView`.
     static let photoCollectionView = _R.nib._PhotoCollectionView()
+    /// Nib `SlideView`.
+    static let slideView = _R.nib._SlideView()
     /// Nib `VerticalCell`.
     static let verticalCell = _R.nib._VerticalCell()
     /// Nib `WeatherView`.
@@ -133,6 +135,11 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "PhotoCollectionView", in: bundle)`
     static func photoCollectionView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.photoCollectionView)
+    }
+    
+    /// `UINib(name: "SlideView", in: bundle)`
+    static func slideView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.slideView)
     }
     
     /// `UINib(name: "VerticalCell", in: bundle)`
@@ -207,7 +214,6 @@ struct _R: Rswift.Validatable {
       try _AlreadyAddedCell.validate()
       try _WeatherView.validate()
       try _CarCell.validate()
-      try _PhotoCollectionView.validate()
       try _AddNewCarCell.validate()
     }
     
@@ -278,7 +284,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _PhotoCollectionView: Rswift.NibResourceType, Rswift.Validatable {
+    struct _PhotoCollectionView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "PhotoCollectionView"
       
@@ -286,8 +292,15 @@ struct _R: Rswift.Validatable {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PhotoCollectionView
       }
       
-      static func validate() throws {
-        if UIKit.UIImage(named: "car_placeholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'car_placeholder' is used in nib 'PhotoCollectionView', but couldn't be loaded.") }
+      fileprivate init() {}
+    }
+    
+    struct _SlideView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SlideView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SlideView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SlideView
       }
       
       fileprivate init() {}
