@@ -81,7 +81,7 @@ class LocalDataSourceImpl: LocalDataSource {
     
     
     func saveCar(car: CarInfo, completion: @escaping (Bool) -> Void) {
-        let filePath = self.saveImage(image: car.image)
+        let filePaths = car.images.map { self.saveImage(image: $0) }
         
         self.persistanceManager.saveRecord(saveCode: { (carObject: Car) in
             carObject.id = car.id
@@ -91,7 +91,7 @@ class LocalDataSourceImpl: LocalDataSource {
             carObject.transmission = Int16(car.transmission.rawValue)
             carObject.condition = Int16(car.condition.rawValue)
             carObject.descrip = car.descrip.isEmpty ? "No description" : car.descrip
-            carObject.filePath = filePath
+            carObject.filePaths = filePaths
         }) { (success) in
             completion(success)
         }

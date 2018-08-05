@@ -28,7 +28,7 @@ class CarInfoVC: UIViewController, BaseView {
     func sunscribeOnViewModel() {
         self.carInfoViewModel.fetchCarInfo(with: self.carId) { [weak self] (carInfo) in
             self?.adapter.carInfo = carInfo
-            self?.headerView.bind([carInfo.image])
+            self?.headerView.bind(carInfo.images)
         }
     }
     

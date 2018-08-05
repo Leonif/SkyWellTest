@@ -11,7 +11,7 @@ import UIKit
 
 struct CarEntity {
     var id: String
-    var image: UIImage
+    var images: [UIImage]
     var title: String
     var price: Double
     var engine: String

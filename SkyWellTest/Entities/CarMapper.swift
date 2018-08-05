@@ -11,17 +11,22 @@ import UIKit
 
 class CarMapper {
     func transformObject(input: Car) -> CarEntity {
-        var carImage: UIImage
+        var carImages: [UIImage] = []
         
-        guard let filePath = input.filePath else { fatalError() }
+        guard let filePaths = input.filePaths else { fatalError() }
         
-        if let image = UIImage(contentsOfFile: filePath) {
-            carImage = image
-        } else {
-            carImage = #imageLiteral(resourceName: "car_placeholder")
+        for filePath in filePaths {
+            if let image = UIImage(contentsOfFile: filePath) {
+                carImages.append(image)
+            } else {
+                carImages.append(#imageLiteral(resourceName: "car_placeholder"))
+            }
         }
         
-        return CarEntity(id: input.id ?? "no id", image: carImage,
+        
+        
+        
+        return CarEntity(id: input.id ?? "no id", images: carImages,
                          title: input.title ?? "No name",
                          price: input.price,
                          engine: input.engine ?? "Uknown",

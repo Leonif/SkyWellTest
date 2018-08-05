@@ -44,7 +44,7 @@ class AddNewCarScreenVC: UIViewController, BaseView {
         self.subscribeOnViewModel()
         self.setupKeyboardObserver()
         
-        photoAdapter.carPhotos = [#imageLiteral(resourceName: "car_placeholder"), #imageLiteral(resourceName: "test_car")]
+        photoAdapter.carPhotos = [#imageLiteral(resourceName: "car_placeholder"), #imageLiteral(resourceName: "test_car"), #imageLiteral(resourceName: "test_car"),#imageLiteral(resourceName: "test_car"),#imageLiteral(resourceName: "car_placeholder")]
         
         
     }
@@ -93,7 +93,7 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     func createCar() {
         self.addCarButton.isEnabled = false
         
-        let carInfo = CarInfo(image: #imageLiteral(resourceName: "test_car"), title: titleTextField.text ?? "No car name",
+        let carInfo = CarInfo(images:[#imageLiteral(resourceName: "test_car")], title: titleTextField.text ?? "No car name",
                               price: Double(priceTextField.text ?? "0.0") ?? 0.0,
                               engine: "2.0i.e",
                               transmission: TransmissionType.enumFromString(string: self.transmissionLabel.text ?? ""),

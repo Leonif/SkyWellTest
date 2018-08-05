@@ -11,7 +11,7 @@ import UIKit
 
 struct CarInfo {
     let id: String
-    let image: UIImage
+    let images: [UIImage]
     var title: String
     var price: Double
     var engine: String
@@ -19,9 +19,9 @@ struct CarInfo {
     var condition: ConditionType
     var descrip: String
     
-    init(id: String = UUID().uuidString, image: UIImage, title: String, price: Double, engine: String, transmission: TransmissionType, condition: ConditionType, description: String) {
+    init(id: String = UUID().uuidString, images: [UIImage], title: String, price: Double, engine: String, transmission: TransmissionType, condition: ConditionType, description: String) {
         self.id = id
-        self.image = image
+        self.images = images
         self.title = title
         self.price = price
         self.engine = engine
