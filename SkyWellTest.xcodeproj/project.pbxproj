@@ -39,6 +39,7 @@
 		79AF322E2116C84600CD128D /* AlreadyAddedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AF322C2116C84600CD128D /* AlreadyAddedCell.xib */; };
 		79AF32332116CA0200CD128D /* PhotoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF32322116CA0200CD128D /* PhotoAdapter.swift */; };
 		79AF32352116CB8D00CD128D /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF32342116CB8D00CD128D /* CollectionView+Extension.swift */; };
+		79AF32372116DDBE00CD128D /* PhotoPickerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF32362116DDBE00CD128D /* PhotoPickerAdapter.swift */; };
 		BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A1211305FB003E91C0 /* AppDelegate.swift */; };
 		BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A3211305FB003E91C0 /* CarListVC.swift */; };
 		BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A5211305FB003E91C0 /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		79AF322C2116C84600CD128D /* AlreadyAddedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlreadyAddedCell.xib; sourceTree = "<group>"; };
 		79AF32322116CA0200CD128D /* PhotoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAdapter.swift; sourceTree = "<group>"; };
 		79AF32342116CB8D00CD128D /* CollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extension.swift"; sourceTree = "<group>"; };
+		79AF32362116DDBE00CD128D /* PhotoPickerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAdapter.swift; sourceTree = "<group>"; };
 		BF97909E211305FB003E91C0 /* SkyWellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9790A1211305FB003E91C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF9790A3211305FB003E91C0 /* CarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListVC.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 		BF9790CB21131B7D003E91C0 /* AddNewCarFlow */ = {
 			isa = PBXGroup;
 			children = (
+				79AF32362116DDBE00CD128D /* PhotoPickerAdapter.swift */,
 				79AF32322116CA0200CD128D /* PhotoAdapter.swift */,
 				BF9790CC21131BF2003E91C0 /* AddNewCarScreenAssembler.swift */,
 				79AF322A2116C81B00CD128D /* AddNewCarCell */,
@@ -541,6 +544,7 @@
 				79AF321221159ED300CD128D /* VerticalCell.swift in Sources */,
 				BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */,
 				79AF321A2115D9EB00CD128D /* CarInfo.swift in Sources */,
+				79AF32372116DDBE00CD128D /* PhotoPickerAdapter.swift in Sources */,
 				79AF32332116CA0200CD128D /* PhotoAdapter.swift in Sources */,
 				79AF32352116CB8D00CD128D /* CollectionView+Extension.swift in Sources */,
 				79AF31FC2114CE6100CD128D /* AddNewCarViewModel.swift in Sources */,

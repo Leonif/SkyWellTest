@@ -21,6 +21,8 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionView: UICollectionView!
     var photoAdapter: PhotoAdapter!
+    var photoPicker: PhotoPickerManager!
+    var carImagesSet: [UIImage] = []
     
     var addNewCarViewModel: AddNewCarViewModel!
     
@@ -36,17 +38,18 @@ class AddNewCarScreenVC: UIViewController, BaseView {
         return b
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar()
         self.setupAdapter()
         self.subscribeOnViewModel()
         self.setupKeyboardObserver()
+
+        self.photoPicker.delegate = self
+        photoAdapter.carPhotos = self.carImagesSet
         
-        photoAdapter.carPhotos = [#imageLiteral(resourceName: "car_placeholder"), #imageLiteral(resourceName: "test_car"), #imageLiteral(resourceName: "test_car"),#imageLiteral(resourceName: "test_car"),#imageLiteral(resourceName: "car_placeholder")]
         
-        
+
     }
     
     func setupAdapter() {
@@ -54,6 +57,10 @@ class AddNewCarScreenVC: UIViewController, BaseView {
         self.collectionView.dataSource = self.photoAdapter
         self.collectionView.register(AlreadyAddedCell.self)
         self.collectionView.register(AddNewCarCell.self)
+        self.photoAdapter.onAddNewPhoto = { [weak self] in
+            guard let `self` = self else { return }
+            self.photoPicker.showPhotoPickerView(in: self, title: "Upload new photo")
+        }
     }
     
     
@@ -93,7 +100,7 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     func createCar() {
         self.addCarButton.isEnabled = false
         
-        let carInfo = CarInfo(images:[#imageLiteral(resourceName: "test_car")], title: titleTextField.text ?? "No car name",
+        let carInfo = CarInfo(images: self.carImagesSet, title: titleTextField.text ?? "No car name",
                               price: Double(priceTextField.text ?? "0.0") ?? 0.0,
                               engine: "2.0i.e",
                               transmission: TransmissionType.enumFromString(string: self.transmissionLabel.text ?? ""),
@@ -108,3 +115,27 @@ class AddNewCarScreenVC: UIViewController, BaseView {
         NotificationCenter.default.removeObserver(self)
     }
 }
+
+
+extension AddNewCarScreenVC: PhotoPickerManagerDelegate {
+    func photoPickerManager(_ photoPickerManager: PhotoPickerManager, didFinishPickingPhoto photo: UIImage) {
+        self.carImagesSet.append(photo)
+        self.photoAdapter.carPhotos = self.carImagesSet
+        self.collectionView.reloadData()
+    }
+    
+    func photoPickerManager(_ photoPickerManager: PhotoPickerManager, didFailWith error: Error) {
+        if let error = error as? PhotoPickerManagerError {
+            switch error {
+            case .cancel, .denied:
+                break
+            default:
+                self.onError(with: error.localizedDescription)
+            }
+        }
+        else {
+            self.onError(with: error.localizedDescription)
+        }
+    }
+}
+

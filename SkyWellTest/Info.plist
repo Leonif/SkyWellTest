@@ -48,5 +48,7 @@
 	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please add photo access to choose car photos</string>
 </dict>
 </plist>

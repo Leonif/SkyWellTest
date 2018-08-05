@@ -18,10 +18,12 @@ class AddNewCarScreenAssembler {
         let addNewCarViewModel = AddNewCarViewModelImpl(carModel: carModel)
         
         let photoAdapter = PhotoAdapter()
+        let photoPicker = PhotoPickerManager()
         
         let view =  R.storyboard.main.addNewCarScreenVC()!
         view.addNewCarViewModel = addNewCarViewModel
         view.photoAdapter = photoAdapter
+        view.photoPicker = photoPicker
         
         return view
     }

@@ -17,6 +17,8 @@ enum PhotoCellType {
 
 class PhotoAdapter: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var onAddNewPhoto: (() -> Void)?
+    
     var carPhotos: [UIImage] = [] {
         didSet {
             self.dataSource = carPhotos.map { .photoCell($0) }
@@ -25,6 +27,7 @@ class PhotoAdapter: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     private var dataSource: [PhotoCellType] = []
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -43,6 +46,10 @@ class PhotoAdapter: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         case .buttonCell:
             let cell: AddNewCarCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+            
+            cell.onAddNewPhoto = { [weak self] in
+                self?.onAddNewPhoto?()
+            }
             return cell
         }
     }
