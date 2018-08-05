@@ -14,8 +14,6 @@ class PhotoCollectionView: UIView, UIScrollViewDelegate {
     var slides: [SlideView] = []
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    var setuped = false
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,19 +39,14 @@ class PhotoCollectionView: UIView, UIScrollViewDelegate {
             slide.imageView.contentMode = .scaleAspectFit
             return slide
         }
-        
         self.pageControl.numberOfPages = slides.count
-        
         return slides
     }
     
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        setupSlideScrollView(slides: slides)
-        
-        
+        self.setupSlideScrollView(slides: slides)
     }
     
     func setupSlideScrollView(slides : [SlideView]) {

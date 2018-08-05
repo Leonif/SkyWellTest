@@ -37,7 +37,7 @@ class CarListViewModelImpl: CarListViewModel {
     }
     
     func fetchWeatherInfo() {
-        weatherModel.fetchWeather(for: (50.490520, 30.499028)) { [weak self] (weather) in
+        weatherModel.fetchWeather(for: (50.474933, 30.517990)) { [weak self] (weather) in
             self?.onFetchedWeatherInfo?(weather)
         }
     }

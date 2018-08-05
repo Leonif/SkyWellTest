@@ -16,5 +16,4 @@ class SlideView: UIView {
         let v = Bundle.main.loadNibNamed("SlideView", owner: nil)?.first as! SlideView
         return v
     }
-    
 }

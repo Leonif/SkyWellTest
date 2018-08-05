@@ -38,12 +38,19 @@ class AddNewCarScreenVC: UIViewController, BaseView {
         return b
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setupKeyboardObserver()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar()
         self.setupAdapter()
         self.subscribeOnViewModel()
-        self.setupKeyboardObserver()
+        
 
         self.photoPicker.delegate = self
         photoAdapter.carPhotos = self.carImagesSet
@@ -84,9 +91,11 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     
     func subscribeOnViewModel() {
         self.addNewCarViewModel.onSaved = { [weak self] in
+            self?.addCarButton.isEnabled = true
             self?.navigationController?.popViewController(animated: true)
         }
         self.addNewCarViewModel.onError = { [weak self] errorMessage in
+            self?.addCarButton.isEnabled = true
             self?.onError(with: errorMessage)
         }
     }
