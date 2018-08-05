@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
-class PhotoCollectionView: UIView {
+class PhotoCollectionView: UIView, UIScrollViewDelegate {
     
     var slides: [SlideView] = []
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    var setuped = false
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,53 +28,50 @@ class PhotoCollectionView: UIView {
     }
     func bind(_ photos: [UIImage]) {
         slides = createSlides(photos: photos)
-        setupSlideScrollView(slides: slides)
+        for i in 0 ..< slides.count {
+            scrollView.addSubview(slides[i])
+        }
+        
     }
-    
     
     func createSlides(photos: [UIImage]) -> [SlideView] {
         let slides = photos.map { (image) -> SlideView in
-            let slide: SlideView = Bundle.main.loadNibNamed("SlideView", owner: self, options: nil)?.first as! SlideView
+            let slide: SlideView = SlideView.view()
             slide.imageView.image = image
             slide.imageView.contentMode = .scaleAspectFit
             return slide
         }
+        
+        self.pageControl.numberOfPages = slides.count
+        
         return slides
     }
     
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        setupSlideScrollView(slides: slides)
+        
+        
+    }
+    
     func setupSlideScrollView(slides : [SlideView]) {
-        scrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        scrollView.contentSize = CGSize(width: self.frame.width * CGFloat(slides.count), height: self.frame.height)
+        scrollView.contentSize = CGSize(width: self.frame.width * CGFloat(slides.count),
+                                        height: self.scrollView.frame.height)
         scrollView.isPagingEnabled = true
         
         for i in 0 ..< slides.count {
             slides[i].frame = CGRect(x: self.frame.width * CGFloat(i), y: 0, width: self.frame.width, height: self.frame.height)
-            scrollView.addSubview(slides[i])
         }
     }
-}
-
-
-extension PhotoCollectionView: UIScrollViewDelegate {
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
-        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
-
-//        let percentage: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-
-        let pageIndex = Int(round(scrollView.contentOffset.x / self.frame.width))
+        if scrollView.contentOffset.y != 0 { scrollView.contentOffset.y = 0 }
         
-        print(pageIndex)
-
-
+        let pageIndex = Int(round(scrollView.contentOffset.x / self.frame.width))
+        self.pageControl.currentPage = pageIndex
     }
+    
+    
 }
-
-
-
-
-
-
-
-
-

@@ -11,4 +11,10 @@ import UIKit
 
 class SlideView: UIView {
     @IBOutlet weak var imageView: UIImageView!
+    
+    class func view() -> SlideView {
+        let v = Bundle.main.loadNibNamed("SlideView", owner: nil)?.first as! SlideView
+        return v
+    }
+    
 }
