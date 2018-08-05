@@ -36,52 +36,10 @@ class LocalDataSourceImpl: LocalDataSource {
         callback(mapper.transformObject(input: car))
     }
     
-    
-    func saveImage(image: UIImage) -> String {
-        // Save imageData to filePath
-        
-        // Get access to shared instance of the file manager
-        let fileManager = FileManager.default
-        
-        // Get the URL for the users home directory
-        let documentsURL =  fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        
-        // Get the document URL as a string
-        let documentPath = documentsURL.path
-        
-        // Create filePath URL by appending final path component (name of image)
-        let filePath = documentsURL.appendingPathComponent("car\(UUID().uuidString).png")
-        
-        
-        // Check for existing image data
-        do {
-            // Look through array of files in documentDirectory
-            let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
-            for file in files {
-                // If we find existing image filePath delete it to make way for new imageData
-                if "\(documentPath)/\(file)" == filePath.path {
-                    try fileManager.removeItem(atPath: filePath.path)
-                }
-            }
-        } catch {
-            print("Could not add image from document directory: \(error)")
-        }
-        
-        // Create imageData and write to filePath
-        do {
-            if let pngImageData = UIImagePNGRepresentation(image) {
-                try pngImageData.write(to: filePath, options: .atomic)
-            }
-        } catch {
-            print("couldn't write image")
-        }
-        
-        return filePath.path
-    }
-    
-    
     func saveCar(car: CarInfo, completion: @escaping (Bool) -> Void) {
-        let filePaths = car.images.map { self.saveImage(image: $0) }
+        
+        
+        let filePaths = car.images.map { self.persistanceManager.saveImage(image: $0) }
         
         self.persistanceManager.saveRecord(saveCode: { (carObject: Car) in
             carObject.id = car.id

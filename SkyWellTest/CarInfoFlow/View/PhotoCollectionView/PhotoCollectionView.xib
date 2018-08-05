@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="282"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8D-qL-abR">
+                <scrollView clipsSubviews="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8D-qL-abR">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="230" id="jE0-28-DyE"/>
