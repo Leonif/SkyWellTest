@@ -65,7 +65,7 @@
                                                 <rect key="frame" x="16" y="173" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JZA-x7-KiI">
                                                 <rect key="frame" x="16" y="300" width="343" height="351"/>
@@ -133,7 +133,7 @@
                                             </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M6f-L6-C5y">
                                                 <rect key="frame" x="34" y="36" width="307" height="70"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="0.60392156860000001" green="0.77647058820000003" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="pWS-tZ-enL"/>
                                                 </constraints>
@@ -204,6 +204,7 @@
                         <viewLayoutGuide key="safeArea" id="gha-KT-HFP"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="M6f-L6-C5y" id="yBm-Ee-RiK"/>
                         <outlet property="conditionLabel" destination="mGm-hI-HNy" id="WcC-D5-QIJ"/>
                         <outlet property="descritionTextView" destination="JZA-x7-KiI" id="Nep-Fa-ohW"/>
                         <outlet property="engineLabel" destination="LCR-6l-ejm" id="Wuk-xd-PNq"/>

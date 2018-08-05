@@ -33,6 +33,12 @@
 		79AF321F2115DDB300CD128D /* CarEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF321E2115DDB300CD128D /* CarEntityMapper.swift */; };
 		79AF32212115E0DF00CD128D /* PhotoCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AF32202115E0DF00CD128D /* PhotoCollectionView.xib */; };
 		79AF32232115E0FB00CD128D /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF32222115E0FB00CD128D /* PhotoCollectionView.swift */; };
+		79AF32282116C81500CD128D /* AddNewCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF32262116C81500CD128D /* AddNewCarCell.swift */; };
+		79AF32292116C81500CD128D /* AddNewCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AF32272116C81500CD128D /* AddNewCarCell.xib */; };
+		79AF322D2116C84600CD128D /* AlreadyAddedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF322B2116C84600CD128D /* AlreadyAddedCell.swift */; };
+		79AF322E2116C84600CD128D /* AlreadyAddedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AF322C2116C84600CD128D /* AlreadyAddedCell.xib */; };
+		79AF32332116CA0200CD128D /* PhotoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF32322116CA0200CD128D /* PhotoAdapter.swift */; };
+		79AF32352116CB8D00CD128D /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF32342116CB8D00CD128D /* CollectionView+Extension.swift */; };
 		BF9790A2211305FB003E91C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A1211305FB003E91C0 /* AppDelegate.swift */; };
 		BF9790A4211305FB003E91C0 /* CarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9790A3211305FB003E91C0 /* CarListVC.swift */; };
 		BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9790A5211305FB003E91C0 /* Main.storyboard */; };
@@ -83,6 +89,12 @@
 		79AF321E2115DDB300CD128D /* CarEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEntityMapper.swift; sourceTree = "<group>"; };
 		79AF32202115E0DF00CD128D /* PhotoCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionView.xib; sourceTree = "<group>"; };
 		79AF32222115E0FB00CD128D /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
+		79AF32262116C81500CD128D /* AddNewCarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCarCell.swift; sourceTree = "<group>"; };
+		79AF32272116C81500CD128D /* AddNewCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCarCell.xib; sourceTree = "<group>"; };
+		79AF322B2116C84600CD128D /* AlreadyAddedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyAddedCell.swift; sourceTree = "<group>"; };
+		79AF322C2116C84600CD128D /* AlreadyAddedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlreadyAddedCell.xib; sourceTree = "<group>"; };
+		79AF32322116CA0200CD128D /* PhotoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAdapter.swift; sourceTree = "<group>"; };
+		79AF32342116CB8D00CD128D /* CollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extension.swift"; sourceTree = "<group>"; };
 		BF97909E211305FB003E91C0 /* SkyWellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9790A1211305FB003E91C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF9790A3211305FB003E91C0 /* CarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListVC.swift; sourceTree = "<group>"; };
@@ -232,6 +244,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		79AF322A2116C81B00CD128D /* AddNewCarCell */ = {
+			isa = PBXGroup;
+			children = (
+				79AF32312116C86200CD128D /* Cells */,
+			);
+			path = AddNewCarCell;
+			sourceTree = "<group>";
+		};
+		79AF322F2116C84B00CD128D /* AlreadyAddedCell */ = {
+			isa = PBXGroup;
+			children = (
+				79AF322B2116C84600CD128D /* AlreadyAddedCell.swift */,
+				79AF322C2116C84600CD128D /* AlreadyAddedCell.xib */,
+			);
+			path = AlreadyAddedCell;
+			sourceTree = "<group>";
+		};
+		79AF32302116C85900CD128D /* AddNewCarCell */ = {
+			isa = PBXGroup;
+			children = (
+				79AF32262116C81500CD128D /* AddNewCarCell.swift */,
+				79AF32272116C81500CD128D /* AddNewCarCell.xib */,
+			);
+			path = AddNewCarCell;
+			sourceTree = "<group>";
+		};
+		79AF32312116C86200CD128D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				79AF32302116C85900CD128D /* AddNewCarCell */,
+				79AF322F2116C84B00CD128D /* AlreadyAddedCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BF979095211305FA003E91C0 = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +341,7 @@
 			children = (
 				BF9790B7211307F4003E91C0 /* UIView+Extension.swift */,
 				79AF31F92114BF5200CD128D /* TableView+Extension.swift */,
+				79AF32342116CB8D00CD128D /* CollectionView+Extension.swift */,
 				79AF31FF2114DFE100CD128D /* UIColor+Extension.swift */,
 				BF9790B52113079A003E91C0 /* BaseView.swift */,
 			);
@@ -303,7 +351,9 @@
 		BF9790CB21131B7D003E91C0 /* AddNewCarFlow */ = {
 			isa = PBXGroup;
 			children = (
+				79AF32322116CA0200CD128D /* PhotoAdapter.swift */,
 				BF9790CC21131BF2003E91C0 /* AddNewCarScreenAssembler.swift */,
+				79AF322A2116C81B00CD128D /* AddNewCarCell */,
 				BF9790C921131B76003E91C0 /* AddNewCarScreenVC.swift */,
 				79AF31FB2114CE6100CD128D /* AddNewCarViewModel.swift */,
 			);
@@ -409,6 +459,8 @@
 				BF9790A7211305FB003E91C0 /* Main.storyboard in Resources */,
 				799E298C2114874200C835A8 /* WeatherView.xib in Resources */,
 				79AF31F72114BDF400CD128D /* CarCell.xib in Resources */,
+				79AF32292116C81500CD128D /* AddNewCarCell.xib in Resources */,
+				79AF322E2116C84600CD128D /* AlreadyAddedCell.xib in Resources */,
 				79AF32212115E0DF00CD128D /* PhotoCollectionView.xib in Resources */,
 				79AF3206211595E800CD128D /* CoupleCell.xib in Resources */,
 			);
@@ -489,9 +541,12 @@
 				79AF321221159ED300CD128D /* VerticalCell.swift in Sources */,
 				BF9790CF21132B7A003E91C0 /* CarInfoVC.swift in Sources */,
 				79AF321A2115D9EB00CD128D /* CarInfo.swift in Sources */,
+				79AF32332116CA0200CD128D /* PhotoAdapter.swift in Sources */,
+				79AF32352116CB8D00CD128D /* CollectionView+Extension.swift in Sources */,
 				79AF31FC2114CE6100CD128D /* AddNewCarViewModel.swift in Sources */,
 				79AF31FA2114BF5200CD128D /* TableView+Extension.swift in Sources */,
 				799D9DE4211415C000490627 /* LocalDataSource.swift in Sources */,
+				79AF32282116C81500CD128D /* AddNewCarCell.swift in Sources */,
 				BF9790C021130DDF003E91C0 /* R.generated.swift in Sources */,
 				799D9DE62114175700490627 /* CarModel.swift in Sources */,
 				79AF32022115934000CD128D /* CarInfoAdapter.swift in Sources */,
@@ -511,6 +566,7 @@
 				79AF32232115E0FB00CD128D /* PhotoCollectionView.swift in Sources */,
 				BF9790D221132BD1003E91C0 /* CarInfoAssembler.swift in Sources */,
 				79AF32002114DFE100CD128D /* UIColor+Extension.swift in Sources */,
+				79AF322D2116C84600CD128D /* AlreadyAddedCell.swift in Sources */,
 				BF9790B62113079A003E91C0 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

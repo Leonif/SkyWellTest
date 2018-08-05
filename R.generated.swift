@@ -86,8 +86,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
+    /// Nib `AddNewCarCell`.
+    static let addNewCarCell = _R.nib._AddNewCarCell()
+    /// Nib `AlreadyAddedCell`.
+    static let alreadyAddedCell = _R.nib._AlreadyAddedCell()
     /// Nib `CarCell`.
     static let carCell = _R.nib._CarCell()
     /// Nib `CoupleCell`.
@@ -100,6 +104,16 @@ struct R: Rswift.Validatable {
     static let verticalCell = _R.nib._VerticalCell()
     /// Nib `WeatherView`.
     static let weatherView = _R.nib._WeatherView()
+    
+    /// `UINib(name: "AddNewCarCell", in: bundle)`
+    static func addNewCarCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addNewCarCell)
+    }
+    
+    /// `UINib(name: "AlreadyAddedCell", in: bundle)`
+    static func alreadyAddedCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.alreadyAddedCell)
+    }
     
     /// `UINib(name: "CarCell", in: bundle)`
     static func carCell(_: Void = ()) -> UIKit.UINib {
@@ -190,9 +204,41 @@ struct _R: Rswift.Validatable {
   
   struct nib: Rswift.Validatable {
     static func validate() throws {
-      try _PhotoCollectionView.validate()
+      try _AlreadyAddedCell.validate()
       try _WeatherView.validate()
       try _CarCell.validate()
+      try _PhotoCollectionView.validate()
+      try _AddNewCarCell.validate()
+    }
+    
+    struct _AddNewCarCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddNewCarCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> AddNewCarCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddNewCarCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in nib 'AddNewCarCell', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _AlreadyAddedCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AlreadyAddedCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> AlreadyAddedCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AlreadyAddedCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "car_placeholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'car_placeholder' is used in nib 'AlreadyAddedCell', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct _CarCell: Rswift.NibResourceType, Rswift.Validatable {

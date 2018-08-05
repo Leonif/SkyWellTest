@@ -19,6 +19,8 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var descritionTextView: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    var photoAdapter: PhotoAdapter!
     
     var addNewCarViewModel: AddNewCarViewModel!
     
@@ -38,9 +40,22 @@ class AddNewCarScreenVC: UIViewController, BaseView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar()
+        self.setupAdapter()
         self.subscribeOnViewModel()
         self.setupKeyboardObserver()
+        
+        photoAdapter.carPhotos = [#imageLiteral(resourceName: "car_placeholder"), #imageLiteral(resourceName: "test_car")]
+        
+        
     }
+    
+    func setupAdapter() {
+        self.collectionView.delegate = self.photoAdapter
+        self.collectionView.dataSource = self.photoAdapter
+        self.collectionView.register(AlreadyAddedCell.self)
+        self.collectionView.register(AddNewCarCell.self)
+    }
+    
     
     func setupKeyboardObserver() {
         // Observe keyboard change

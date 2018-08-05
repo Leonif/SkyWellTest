@@ -22,26 +22,6 @@ public protocol ReusableView: class {
     
 }
 
-//
-// MARK: - ReusableView
-//
-extension ReusableView where Self: UICollectionViewCell {
-    
-    static var reuseIdentifier: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last!
-    }
-}
-
-extension NibLoadableView where Self: UICollectionReusableView {
-    
-    static var nibName: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last!
-    }
-}
-
-
-
-
 
 typealias NibLoadableReusable = ReusableView & NibLoadableView
 

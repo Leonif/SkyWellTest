@@ -16,9 +16,6 @@ protocol LocalDataSource {
     func removeCar(with id: String)
 }
 
-
-
-
 class LocalDataSourceImpl: LocalDataSource {
     
     private var persistanceManager: PersistanceManager!
@@ -60,7 +57,6 @@ class LocalDataSourceImpl: LocalDataSource {
         do {
             // Look through array of files in documentDirectory
             let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
-            
             for file in files {
                 // If we find existing image filePath delete it to make way for new imageData
                 if "\(documentPath)/\(file)" == filePath.path {
@@ -70,7 +66,6 @@ class LocalDataSourceImpl: LocalDataSource {
         } catch {
             print("Could not add image from document directory: \(error)")
         }
-        
         
         // Create imageData and write to filePath
         do {
