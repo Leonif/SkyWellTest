@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-protocol LocalDataSource {
+protocol CarLocalDataSource {
     func fetchAllCars(callback: ([CarEntity]) -> Void)
     func fetchCar(with id: String, callback: (CarEntity)-> Void)
     func saveCar(car: CarInfo, completion: @escaping (Bool) -> Void)
     func removeCar(with id: String)
 }
 
-class LocalDataSourceImpl: LocalDataSource {
+class CarLocalDataSourceImpl: CarLocalDataSource {
     
     private var persistanceManager: PersistanceManager!
     private var mapper: CarMapper = CarMapper()
@@ -37,8 +37,6 @@ class LocalDataSourceImpl: LocalDataSource {
     }
     
     func saveCar(car: CarInfo, completion: @escaping (Bool) -> Void) {
-        
-        
         let filePaths = car.images.map { self.persistanceManager.saveImage(image: $0) }
         
         self.persistanceManager.saveRecord(saveCode: { (carObject: Car) in

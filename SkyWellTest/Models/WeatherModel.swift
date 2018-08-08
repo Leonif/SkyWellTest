@@ -10,18 +10,18 @@ import Foundation
 
 
 protocol WeatherModel {
-    func fetchWeather(for coords: (Double, Double), callback: @escaping (WeatherEntity) -> Void)
+    func fetchWeather(for coords: (lat: Double, lon: Double), callback: @escaping (WeatherEntity) -> Void)
 }
 
 class WeatherModelImpl: WeatherModel {
     
-    private var cloudDataSource: CloudDataSource!
+    private var cloudDataSource: WeatherCloudDataSource!
     
-    init(cloudDataSource: CloudDataSource) {
+    init(cloudDataSource: WeatherCloudDataSource) {
         self.cloudDataSource = cloudDataSource
     }
     
-    func fetchWeather(for coords: (Double, Double), callback: @escaping (WeatherEntity) -> Void) {
+    func fetchWeather(for coords: (lat: Double, lon: Double), callback: @escaping (WeatherEntity) -> Void) {
         self.cloudDataSource.fetchWeather(for: coords) { (weatherInfo) in
             callback(weatherInfo)
         }

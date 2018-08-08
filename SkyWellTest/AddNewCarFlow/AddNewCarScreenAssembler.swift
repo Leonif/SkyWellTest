@@ -13,7 +13,7 @@ class AddNewCarScreenAssembler {
     func assemble() -> UIViewController {
         let persistanceManager = (UIApplication.shared.delegate as? AppDelegate)!.persistanceManager
         
-        let localDataSource = LocalDataSourceImpl(persistanceManager: persistanceManager)
+        let localDataSource = CarLocalDataSourceImpl(persistanceManager: persistanceManager)
         let carModel = CarModelImpl(localDataSource: localDataSource)
         let addNewCarViewModel = AddNewCarViewModelImpl(carModel: carModel)
         

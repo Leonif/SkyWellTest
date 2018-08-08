@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol CloudDataSource {
-    func fetchWeather(for coords: (Double, Double), callback: @escaping (WeatherEntity) -> Void)
+protocol WeatherCloudDataSource {
+    func fetchWeather(for coords: (lat: Double, lon: Double), callback: @escaping (WeatherEntity) -> Void)
 }
 
 struct WeatherEntity {
@@ -27,19 +27,19 @@ struct WeatherEntity {
 }
 
 
-class CloudDataSourceImpl: CloudDataSource {
+class WeatherCloudDataSourceImpl: WeatherCloudDataSource {
     private var networkManager: NetworkManager!
     
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
     
-    func fetchWeather(for coords: (Double, Double), callback: @escaping (WeatherEntity) -> Void) {
+    func fetchWeather(for coords: (lat: Double, lon: Double), callback: @escaping (WeatherEntity) -> Void) {
         
                 let baseUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather")!
                 let parameters: [String: Any] = [
-                    "lat": coords.0,
-                    "lon": coords.1,
+                    "lat": coords.lat,
+                    "lon": coords.lon,
                     "APPID": "4a92498353c9514b369ac8651d833537"
                 ]
         

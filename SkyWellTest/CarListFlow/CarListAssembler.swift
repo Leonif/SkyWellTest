@@ -16,8 +16,8 @@ class CarListAssembler {
         let networkManager = (UIApplication.shared.delegate as? AppDelegate)!.networkManager
         let persistanceManager = (UIApplication.shared.delegate as? AppDelegate)!.persistanceManager
         
-        let cloudDataSource = CloudDataSourceImpl(networkManager: networkManager)
-        let localDataSource = LocalDataSourceImpl(persistanceManager: persistanceManager)
+        let cloudDataSource = WeatherCloudDataSourceImpl(networkManager: networkManager)
+        let localDataSource = CarLocalDataSourceImpl(persistanceManager: persistanceManager)
         
         let weatherModel = WeatherModelImpl(cloudDataSource: cloudDataSource)
         let carModel = CarModelImpl(localDataSource: localDataSource)

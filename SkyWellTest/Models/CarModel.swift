@@ -76,9 +76,9 @@ protocol CarModel {
 
 class CarModelImpl: CarModel {
     
-    private var localDataSource: LocalDataSource!
+    private var localDataSource: CarLocalDataSource!
     
-    init(localDataSource: LocalDataSource) {
+    init(localDataSource: CarLocalDataSource) {
         self.localDataSource = localDataSource
     }
     
