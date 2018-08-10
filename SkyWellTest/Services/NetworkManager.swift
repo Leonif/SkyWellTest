@@ -29,7 +29,6 @@ private class NetworkManagerImpl: NetworkManager {
                           parameters: requestType.parameters,
                           encoding: URLEncoding.default, headers: nil)
             .responseJSON { (responce) in
-                print(responce.debugDescription)
                 callback(responce.data)
         }
     }
