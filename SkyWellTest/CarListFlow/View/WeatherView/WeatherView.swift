@@ -23,8 +23,8 @@ class WeatherView: UIView {
 
     func bind(_ weatherInfo: WeatherEntity) {
         self.city.text = weatherInfo.city
-        self.condtitions.text = weatherInfo.description
-        let plus = weatherInfo.cesium > 0.0 ? "+" : ""
-        self.tempreture.text = String(format: "%@%.0f", plus, weatherInfo.cesium)
+        self.condtitions.text = weatherInfo.weatherInfo.description
+        let plus = weatherInfo.tempratureInfo.cesium > 0.0 ? "+" : ""
+        self.tempreture.text = String(format: "%@%.0f", plus, weatherInfo.tempratureInfo.cesium)
     }
 }

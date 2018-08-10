@@ -12,7 +12,7 @@ import Alamofire
 typealias NetworkHttpMethod = HTTPMethod
 
 public protocol NetworkManager {
-    func executeHttpRequest(requestType: RequestType, callback: @escaping (Any) -> Void)
+    func executeHttpRequest(requestType: RequestType, callback: @escaping (Data?) -> Void)
 }
 
 public struct RequestType {
@@ -23,19 +23,14 @@ public struct RequestType {
 
 private class NetworkManagerImpl: NetworkManager {
     
-    func executeHttpRequest(requestType: RequestType, callback: @escaping (Any) -> Void) {
+    func executeHttpRequest(requestType: RequestType, callback: @escaping (Data?) -> Void) {
         Alamofire.request(requestType.baseURL,
                           method: requestType.method,
                           parameters: requestType.parameters,
                           encoding: URLEncoding.default, headers: nil)
             .responseJSON { (responce) in
-                switch responce.result {
-                case let .success(weatherJSONInfo):
-                    callback(weatherJSONInfo)
-                case let .failure(error):
-                    fatalError("Error request \(error.localizedDescription)")
-                }
-                callback(responce)
+                print(responce.debugDescription)
+                callback(responce.data)
         }
     }
 }
@@ -45,3 +40,6 @@ public class NetworkManagerFactory {
         return NetworkManagerImpl()
     }
 }
+
+
+
