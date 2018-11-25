@@ -19,7 +19,6 @@ protocol PersistanceManager {
     func saveImage(image: UIImage) -> String
 }
 
-
 class PersistanceManagerImpl: PersistanceManager {
     init() {
         MagicalRecord.setupCoreDataStack(withStoreNamed: "CoreData")
