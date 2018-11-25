@@ -57,6 +57,4 @@ class CarLocalDataSourceImpl: CarLocalDataSource {
         let car: Car = self.persistanceManager.fetchRecord(with: id)
         self.persistanceManager.removeRecord(for: car)
     }
-    
-    
 }
