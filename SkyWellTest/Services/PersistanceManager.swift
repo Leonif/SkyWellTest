@@ -55,7 +55,6 @@ class PersistanceManagerImpl: PersistanceManager {
         // Create filePath URL by appending final path component (name of image)
         let filePath = documentsURL.appendingPathComponent("file\(UUID().uuidString).png")
         
-        
         // Check for existing image data
         do {
             // Look through array of files in documentDirectory
@@ -78,7 +77,6 @@ class PersistanceManagerImpl: PersistanceManager {
         } catch {
             print("couldn't write image")
         }
-        
         return filePath.path
     }
     
